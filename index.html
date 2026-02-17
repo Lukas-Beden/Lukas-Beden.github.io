@@ -7,10 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <canvas id="stars-canvas"></canvas>
     <nav class="nav">
         <div class="nav-logo">&lt;Lukas Beden /&gt;</div>
         <ul class="nav-links">
@@ -28,7 +28,7 @@
                 que les joueurs apprennent à <span class="highlight">comprendre</span>.
             </h1>
             <p class="hero-subtitle">
-                Game Systems Designer • Génération procédurale • Mécaniques émergentes
+                Game Systems Designer • Génération procédurale • Mécaniques originales
             </p>
             <a href="#projects" class="btn-primary">Explorer mes projets</a>
         </div>
@@ -37,12 +37,12 @@
     <section id="vision" class="section">
         <h2>Ma Vision</h2>
         <p>
-            J’aime les jeux où la progression ne vient pas d’un arbre de compétences,
-            mais de la compréhension du système.
+            J'aime les jeux où la progression ne vient pas d'un arbre de compétences,
+            mais d'une réflexion autour de diverses mécaniques de jeux.
         </p>
         <p>
             Mon travail se concentre sur la création de mécaniques centrales fortes,
-            capables de générer des situations émergentes et des moments de découverte.
+            capables de générer des moments de découverte.
         </p>
     </section>
 
@@ -55,14 +55,14 @@
         <div class="proc-grid">
             <div>
                 <h3>Structures</h3>
-                <p>Level design algorithmique, layouts dynamiques.</p>
+                <p>Level design algorithmique.</p>
             </div>
             <div>
                 <h3>Systèmes</h3>
-                <p>Interactions imprévues entre mécaniques.</p>
+                <p>Interactions entre mécaniques.</p>
             </div>
             <div>
-                <h3>Emergence</h3>
+                <h3>Originalité</h3>
                 <p>Des règles simples, des résultats surprenants.</p>
             </div>
         </div>
@@ -71,42 +71,42 @@
     <section id="projects" class="section">
         <h2>Projets Sélectionnés</h2>
 
-        <div class="project">
-            <h3>Génération Procédurale & Portails</h3>
+        <a class="project" href="https://github.com/Lukas-Beden/Room-Defenders" target="_blank" rel="noopener noreferrer">
+            <h3>Génération Procédurale & Portails <span class="project-arrow">↗</span></h3>
             <p>
-                Prototype solo basé sur la génération algorithmique de maps et
+                Prototype basé sur la génération algorithmique de maps et
                 un système de portails dessinés par le joueur.
             </p>
             <span class="tag">Unity</span>
-            <span class="tag">C#</span>
             <span class="tag">Procédural</span>
-        </div>
+            <span class="tag">Mécanique centrale</span>
+        </a>
 
-        <div class="project">
-            <h3>Room Defenders</h3>
+        <a class="project" href="https://github.com/Lukas-Beden/Procedural-Generation" target="_blank" rel="noopener noreferrer">
+            <h3>Room Defenders <span class="project-arrow">↗</span></h3>
             <p>
-                Développement d’un système optimisé de gestion de compétences
+                Développement d'un système de gestion de compétences
                 dans un hero defense.
             </p>
             <span class="tag">Architecture</span>
             <span class="tag">Optimisation</span>
-        </div>
+        </a>
 
-        <div class="project">
-            <h3>Switch 2D / 3D</h3>
+        <a class="project" href="https://github.com/Lukas-Beden/E3C-Switch-World" target="_blank" rel="noopener noreferrer">
+            <h3>Switch 2D / 3D <span class="project-arrow">↗</span></h3>
             <p>
-                Prototype exploratoire permettant de basculer dynamiquement
+                Prototype permettant de basculer dynamiquement
                 entre deux dimensions.
             </p>
             <span class="tag">Prototype</span>
             <span class="tag">Mécanique centrale</span>
-        </div>
+        </a>
     </section>
 
     <section id="contact" class="section contact">
         <h2>Contact</h2>
         <p>
-            Ouvert aux stages, collaborations et discussions autour du game design systémique.
+            Ouvert aux stages et discussions.
         </p>
         <a href="mailto:lukasbedendev@example.com" class="btn-primary">
             Me contacter
@@ -117,6 +117,6 @@
         <p>© 2025 - Lukas Beden</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
