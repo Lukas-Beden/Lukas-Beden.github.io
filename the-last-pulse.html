@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Pulse — Game Concept</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="the-last-pulse.css">
+</head>
+<body>
+    <!-- Cyber tracker (fixed) -->
+    <div class="cyber-tracker">
+        <div class="tracker-label">Taux de cybernétisation</div>
+        <div class="tracker-bar">
+            <div class="tracker-fill" id="trackerFill"></div>
+        </div>
+        <div class="tracker-value"><span id="trackerValue">0</span>%</div>
+        <div class="tracker-warning" id="trackerWarning">
+            ⚠ Seuil critique approché
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <a href="index.html" class="nav-back">← Retour au portfolio</a>
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            Exercice de conception
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-content">
+            <p class="hero-label">Dungeon Crawler Roguelite // Cyberpunk</p>
+            <h1 class="hero-title">THE LAST<br>PULSE</h1>
+            <p class="hero-subtitle">
+                Un roguelite où chaque victoire érode votre humanité.
+            </p>
+            <p class="hero-tagline">
+                "Survivre. Qu'importe le moyen. Mais à quel prix ?"
+            </p>
+            <div class="hero-meta">
+                <div class="meta-item">Plateforme <span class="meta-value">PC / Mobile</span></div>
+                <div class="meta-item">Genre <span class="meta-value">Roguelite / Base Building</span></div>
+                <div class="meta-item">Joueurs <span class="meta-value">Solo</span></div>
+            </div>
+            <div class="warning-box">
+                ⚠ Concept de game design — Exercice de conception de systèmes
+            </div>
+        </div>
+    </header>
+
+    <!-- Vision -->
+    <section class="vision" data-cyber="5">
+        <div class="section-header">
+            <span class="section-num">01</span>
+            <h2 class="section-title">Vision <span class="cyan">Créative</span></h2>
+        </div>
+        <p>
+            <span class="highlight">The Last Pulse</span> impose une tension dialectique entre la survie technique et l'intégrité de l'âme. 
+            Le moteur d'engagement repose sur un paradoxe fondamental : chaque amélioration nécessaire pour braver 
+            les profondeurs du Laboratoire érode irrémédiablement le lien du joueur avec la Cité qu'il jure de protéger.
+        </p>
+        <p>
+            Vous n'êtes pas un héros. Seulement un vagabond que la ville a récupéré à l'article de la mort. 
+            Descendre pour sauver la ville, c'est accepter de devenir ce que l'humanité craint le plus.
+        </p>
+        <p>
+            L'univers s'articule autour d'un contraste puissant : une cité-fantôme mourante face à un complexe 
+            technologique déshumanisé. Le Laboratoire — un monolithe souterrain de 50 niveaux — est un dédale 
+            de néons agressifs, gardé par des machines conscientes et des hybrides dont l'humanité a été purgée.
+        </p>
+    </section>
+
+    <!-- Core Loop -->
+    <section class="core-loop" data-cyber="12">
+        <div class="section-header">
+            <span class="section-num">02</span>
+            <h2 class="section-title">Boucle de <span class="yellow">Gameplay</span></h2>
+        </div>
+        <p>
+            Chaque incursion est une épreuve de gestion de crise où <span class="highlight">la mort est une transformation, pas une fin</span>. 
+            Le joueur progresse vers l'objectif ultime : l'Étage 50.
+        </p>
+        <div class="loop-steps">
+            <div class="loop-step" data-num="01">
+                <h3>Préparer</h3>
+                <p>Recruter des compagnons, acheter des provisions, équiper ses armes.</p>
+            </div>
+            <div class="loop-step" data-num="02">
+                <h3>Descendre</h3>
+                <p>Explorer 5-8 étages procéduraux, collecter ressources et loot.</p>
+            </div>
+            <div class="loop-step" data-num="03">
+                <h3>Combattre</h3>
+                <p>Combat temps-réel avec gestion stamina, positionnement tactique.</p>
+            </div>
+            <div class="loop-step" data-num="04">
+                <h3>Mourir</h3>
+                <p>Retour en surface avec ressources. Installation d'un implant obligatoire.</p>
+            </div>
+            <div class="loop-step" data-num="05">
+                <h3>Reconstruire</h3>
+                <p>Améliorer la Cité, débloquer bâtiments, gérer la réputation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dialectique (mécanique centrale) -->
+    <section class="dialectic" data-cyber="25">
+        <div class="section-header">
+            <span class="section-num">03</span>
+            <h2 class="section-title">Dialectique de la <span class="red">Cybernétisation</span></h2>
+        </div>
+        <p>
+            La résurrection n'est pas un don — c'est un investissement chirurgical. 
+            En cas de défaite, les médecins de la ville vous ramènent pour vous 'rafistoler'. 
+            <span class="highlight">Chaque mort impose l'installation d'un implant permanent.</span>
+        </p>
+        <p>
+            Vous revenez plus puissant, mais avec un taux de cybernétisation accru (+8% à +15%). 
+            Votre apparence change radicalement : peau métallique, lentilles optiques froides, voix synthétique.
+        </p>
+
+        <table class="implant-table">
+            <thead>
+                <tr>
+                    <th>Implant</th>
+                    <th>Effet tactique</th>
+                    <th>Coût humanité</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bras Hydraulique</td>
+                    <td>+30% dégâts de mêlée</td>
+                    <td class="cost-med">+10%</td>
+                </tr>
+                <tr>
+                    <td>Œil Infrarouge</td>
+                    <td>Vision thermique à travers les murs</td>
+                    <td class="cost-low">+8%</td>
+                </tr>
+                <tr>
+                    <td>Jambes Boostées</td>
+                    <td>+50% vitesse de déplacement</td>
+                    <td class="cost-med">+12%</td>
+                </tr>
+                <tr>
+                    <td>Cœur Synthétique</td>
+                    <td>+40% points de vie maximum</td>
+                    <td class="cost-high">+15%</td>
+                </tr>
+                <tr>
+                    <td>Réflexes Augmentés</td>
+                    <td>Slow-motion lors des parades réussies</td>
+                    <td class="cost-med">+10%</td>
+                </tr>
+                <tr>
+                    <td>Interface Neurale</td>
+                    <td>Piratage accéléré des drones ennemis</td>
+                    <td class="cost-low">+7%</td>
+                </tr>
+                <tr>
+                    <td>Armure Dermique</td>
+                    <td>Réduction passive des dégâts balistiques</td>
+                    <td class="cost-high">+13%</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Impact sur la ville -->
+    <section class="city-impact" data-cyber="45">
+        <div class="section-header">
+            <span class="section-num">04</span>
+            <h2 class="section-title">Impact sur la <span class="cyan">Ville</span></h2>
+        </div>
+        <p>
+            La Ville réagit à vos actes — elle se transforme à mesure que vous vous cybernétisez. 
+            Les prix augmentent, les regards deviennent fuyants, l'architecture se métallise.
+        </p>
+
+        <div class="progression-chart">
+            <div class="prog-row">
+                <div class="prog-percent">0–25%</div>
+                <div class="prog-bar"><div class="prog-fill" style="width: 25%;"></div></div>
+                <div class="prog-desc">Pierre, bois, chaleur. Accueil chaleureux.</div>
+            </div>
+            <div class="prog-row">
+                <div class="prog-percent">26–50%</div>
+                <div class="prog-bar"><div class="prog-fill" style="width: 50%;"></div></div>
+                <div class="prog-desc">Premiers néons. Regards fuyants. Prix +15%.</div>
+            </div>
+            <div class="prog-row">
+                <div class="prog-percent">51–75%</div>
+                <div class="prog-bar"><div class="prog-fill" style="width: 75%;"></div></div>
+                <div class="prog-desc">Architecture froide. Désertion. Refus d'alliés.</div>
+            </div>
+            <div class="prog-row">
+                <div class="prog-percent">76–90%</div>
+                <div class="prog-bar"><div class="prog-fill" style="width: 90%;"></div></div>
+                <div class="prog-desc">Ville-machine. Hostilité totale. Prix ×3.</div>
+            </div>
+            <div class="prog-row">
+                <div class="prog-percent">90%+</div>
+                <div class="prog-bar"><div class="prog-fill" style="width: 100%; background: var(--red);"></div></div>
+                <div class="prog-desc" style="color: var(--red);">SINGULARITÉ MÉCANIQUE — GAME OVER DÉFINITIF</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Base Building -->
+    <section class="base-building" data-cyber="58">
+        <div class="section-header">
+            <span class="section-num">05</span>
+            <h2 class="section-title">Reconstruction de la <span class="yellow">Cité</span></h2>
+        </div>
+        <p>
+            La Ville est votre refuge, votre seul lien avec ce qu'il reste d'humain. 
+            Vous y construisez, améliorez et réparez ce que le Laboratoire a détruit.
+        </p>
+
+        <div class="buildings-grid">
+            <div class="building-card">
+                <h3>Forge</h3>
+                <div class="building-cost">50 Ferraille</div>
+                <p>Améliorations permanentes de l'équipement</p>
+            </div>
+            <div class="building-card">
+                <h3>Taverne</h3>
+                <div class="building-cost">30 Ferraille</div>
+                <p>Recrutement de compagnons (20 crédits/allié)</p>
+            </div>
+            <div class="building-card">
+                <h3>Clinique</h3>
+                <div class="building-cost">80 Ferraille</div>
+                <p>Choisir parmi 3 implants lors d'une résurrection</p>
+            </div>
+            <div class="building-card">
+                <h3>Entrepôt</h3>
+                <div class="building-cost">40 Ferraille</div>
+                <p>Stockage persistant des ressources</p>
+            </div>
+            <div class="building-card">
+                <h3>Marché</h3>
+                <div class="building-cost">20 Ferraille</div>
+                <p>Achat de provisions et équipement critique</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Système social -->
+    <section class="social-system" data-cyber="70">
+        <div class="section-header">
+            <span class="section-num">06</span>
+            <h2 class="section-title">Système <span class="red">Social</span></h2>
+        </div>
+        <p>
+            Le recrutement s'effectue à la Taverne pour 20 crédits par compagnon. 
+            Ces alliés ne sont pas des extensions du joueur — ce sont des entités totalement autonomes 
+            dotées de leur propre instinct de survie.
+        </p>
+        <p>
+            <span class="highlight">La Mécanique du Sacrifice :</span> 
+            Dans l'urgence, vous pouvez sciemment utiliser un allié comme bouclier humain, 
+            lui voler ses provisions ou l'abandonner pour sauver votre peau.
+        </p>
+        <p>
+            Un compagnon mort ou sacrifié est perdu pour l'intégralité de la sauvegarde. 
+            Même les meurtres commis sans témoin finissent par se savoir. 
+            Après 2-3 sacrifices, la réputation s'effondre : prix Taverne triplés définitivement, 
+            risque de trahison future.
+        </p>
+    </section>
+
+    <!-- Endings -->
+    <section class="endings" data-cyber="85">
+        <div class="section-header">
+            <span class="section-num">07</span>
+            <h2 class="section-title">Conditions de <span class="cyan">Fin</span></h2>
+        </div>
+        <p>
+            Le véritable défi n'est pas d'atteindre l'Étage 50 — c'est de le faire sans perdre ce que vous essayez de sauver. 
+            La vraie victoire n'est pas celle où vous gagnez. C'est celle où vous restez encore humain.
+        </p>
+
+        <div class="endings-grid">
+            <div class="ending success">
+                <div class="ending-label">● Victoire totale</div>
+                <h3>Fin Humaine (0–30%)</h3>
+                <p>Vous sauvez la ville et restez un homme parmi les hommes.</p>
+            </div>
+            <div class="ending warning">
+                <div class="ending-label">● Victoire amère</div>
+                <h3>Fin Hybride (31–60%)</h3>
+                <p>La ville est sauvée, mais vous êtes devenu un paria craint de tous.</p>
+            </div>
+            <div class="ending warning">
+                <div class="ending-label">● Victoire creuse</div>
+                <h3>Fin Machine (61–74%)</h3>
+                <p>Le complexe est vaincu mais vous n'êtes plus qu'une extension du silicium.</p>
+            </div>
+            <div class="ending failure">
+                <div class="ending-label">✕ Game Over définitif</div>
+                <h3>Singularité Mécanique (90%+)</h3>
+                <p>Vous devenez un gardien du complexe. Nouvelle partie obligatoire.</p>
+            </div>
+            <div class="ending failure">
+                <div class="ending-label">✕ Game Over définitif</div>
+                <h3>Inaction Fatale</h3>
+                <p>Refuser de descendre dans le Laboratoire pendant 10 jours. La ville meurt de faim.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-note">
+            "Parviendrez-vous à survivre sans devenir ce que vous combattez ?"
+        </p>
+        <a href="index.html" class="btn-back">← Retour au portfolio</a>
+    </footer>
+
+    <script src="the-last-pulse.js"></script>
+</body>
+</html>
