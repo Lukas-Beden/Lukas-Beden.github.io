@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Développeur de Jeux Vidéo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particles background effect -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Scanlines overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="glitch" data-text="DEV.GAMES">&lt;DEV.GAMES/&gt;</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link">Accueil</a></li>
+            <li><a href="#about" class="nav-link">À propos</a></li>
+            <li><a href="#projects" class="nav-link">Projets</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="line" style="animation-delay: 0.1s;">Développeur</span>
+                    <span class="line" style="animation-delay: 0.3s;">de Jeux Vidéo</span>
+                </h1>
+                <p class="hero-subtitle" style="animation-delay: 0.5s;">
+                    Étudiant en informatique option jeux vidéo • Passionné par la création d'expériences interactives uniques
+                </p>
+                <div class="hero-cta" style="animation-delay: 0.7s;">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Découvrir mes projets</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span>
+                À propos
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Étudiant en 3ème année d'informatique option jeux vidéo, je me spécialise dans le développement de gameplay et la création d'expériences ludiques innovantes.</p>
+                    <p>Passionné par les systèmes procéduraux, l'optimisation et le game design narratif, je cherche constamment à repousser les limites de ce qui est possible dans le jeu vidéo.</p>
+
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Moteurs de jeu</h3>
+                            <ul class="skill-list">
+                                <li>Unity</li>
+                                <li>Unreal Engine</li>
+                                <li>Godot</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Langages</h3>
+                            <ul class="skill-list">
+                                <li>C#</li>
+                                <li>C++</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Spécialités</h3>
+                            <ul class="skill-list">
+                                <li>Génération procédurale</li>
+                                <li>Optimisation</li>
+                                <li>Game Design</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span>
+                Projets
+            </h2>
+
+            <!-- Project 1: Procedural Generation -->
+            <article class="project project-featured">
+                <div class="project-image">
+                    <div class="project-placeholder">
+                        <span class="placeholder-icon">🎮</span>
+                        <p>Remplace moi par une capture d'écran ou GIF</p>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-tag">Projet Solo</span>
+                        <h3 class="project-title">Génération Procédurale & Portails</h3>
+                    </div>
+                    <div class="project-description">
+                        <p>Jeu avec génération procédurale de maps où le joueur dessine des portails pour voyager entre différents mondes. Réalisé en une semaine en quasi-autonomie.</p>
+                    </div>
+                    <ul class="project-tech">
+                        <li>Génération procédurale</li>
+                        <li>Système de portails</li>
+                        <li>Unity / C#</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code source
+                        </a>
+                        <!-- Uncomment when you have a demo
+                        <a href="#" class="project-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            Démo
+                        </a>
+                        -->
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 2: Room Defenders -->
+            <article class="project project-reverse">
+                <div class="project-image">
+                    <div class="project-placeholder">
+                        <span class="placeholder-icon">⚔️</span>
+                        <p>Remplace moi par une capture d'écran ou GIF</p>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-tag">Stage - 2 mois</span>
+                        <h3 class="project-title">Room Defenders</h3>
+                    </div>
+                    <div class="project-description">
+                        <p>Hero defense où j'ai développé la logique de gestion des compétences de manière optimisée. Travail en équipe dans un contexte professionnel.</p>
+                    </div>
+                    <ul class="project-tech">
+                        <li>Système de compétences</li>
+                        <li>Optimisation</li>
+                        <li>Architecture logicielle</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code source
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 3: 2D/3D Switch -->
+            <article class="project">
+                <div class="project-image">
+                    <div class="project-placeholder">
+                        <span class="placeholder-icon">🔄</span>
+                        <p>Remplace moi par une capture d'écran ou GIF</p>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-tag">Prototype Technique</span>
+                        <h3 class="project-title">Switch 2D/3D</h3>
+                    </div>
+                    <div class="project-description">
+                        <p>Prototype exploratoire permettant de basculer entre une vue 2D et 3D. Développé en binôme en une semaine, je me suis concentré sur le système de transition entre les dimensions.</p>
+                    </div>
+                    <ul class="project-tech">
+                        <li>Mécanique innovante</li>
+                        <li>Transition 2D/3D</li>
+                        <li>Prototype rapide</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            Code source
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project 4: The Last Pulse (Coming Soon) -->
+            <article class="project project-wip project-reverse">
+                <div class="project-image">
+                    <div class="project-placeholder project-placeholder-wip">
+                        <span class="placeholder-icon">⚡</span>
+                        <p>En développement</p>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-tag project-tag-wip">En cours</span>
+                        <h3 class="project-title">The Last Pulse</h3>
+                    </div>
+                    <div class="project-description">
+                        <p>Projet personnel ambitieux combinant combat dynamique et gestion stratégique avec un fort accent sur la narration. Le projet vient de débuter et évoluera au fil du temps.</p>
+                    </div>
+                    <ul class="project-tech">
+                        <li>Combat</li>
+                        <li>Gestion</li>
+                        <li>Narration</li>
+                    </ul>
+                    <div class="project-status">
+                        <span class="status-label">Statut :</span>
+                        <span class="status-text">Pré-production</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span>
+                Contact
+            </h2>
+            <div class="contact-content">
+                <p class="contact-text">
+                    Je suis actuellement à la recherche de nouvelles opportunités. Que ce soit pour un stage, un projet collaboratif ou simplement pour échanger sur le game dev, n'hésitez pas à me contacter !
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:votre.email@example.com" class="contact-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>votre.email@example.com</span>
+                    </a>
+                    <a href="https://github.com/votreusername" class="contact-btn" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/votreprofil" class="contact-btn" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 - Conçu et développé avec passion</p>
+            <p class="footer-tech">HTML • CSS • JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
