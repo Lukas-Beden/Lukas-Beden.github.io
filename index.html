@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!--<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -170,6 +170,339 @@
 
     <footer>
         <p>© 2025 — Lukas Beden &nbsp;·&nbsp; Game Systems Designer</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lukas Beden — Développeur Gameplay & Mécaniques</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="stars-canvas"></canvas>
+
+    <nav class="nav">
+        <div class="nav-logo">Lukas Beden</div>
+        <ul class="nav-links">
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#skills">Compétences</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <!-- PHOTO DE PROFIL : Décommenter et ajouter ton image -->
+            <!-- <img src="photo-profil.jpg" alt="Lukas Beden" class="hero-avatar"> -->
+
+            <p class="hero-eyebrow">Développeur Gameplay</p>
+            <h1>
+                Je développe des <span class="highlight-teal">mécaniques</span><br>
+                qui donnent envie de <span class="highlight">comprendre</span>.
+            </h1>
+            <p class="hero-subtitle">
+                Génération procédurale
+                <span>·</span>
+                Systèmes originaux
+                <span>·</span>
+                Unity / C#
+            </p>
+            <a href="#projects" class="btn-primary">
+                Voir mes projets
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+            Défiler
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <p class="section-label">01 — À propos</p>
+        <h2>Mon <span class="accent">parcours</span></h2>
+        <p>
+            Actuellement étudiant en 3ème année de <span class="highlight">Bachelor Développeur Informatique, option Jeux Vidéo</span>
+            au Gaming Campus (Lyon), je me spécialise dans le développement de mécaniques de jeu originales
+            et la génération procédurale.
+        </p>
+        <p>
+            Ma vision : créer des systèmes qui interagissent entre eux plutôt que scripter
+            chaque interaction. J'aime les jeux où la progression vient de la compréhension progressive
+            des règles — comme Outer Wilds, Tunic, ou Chant of Sennaar.
+        </p>
+
+        <div class="formation-card">
+            <div class="formation-icon">🎓</div>
+            <div class="formation-content">
+                <h3>Gaming Campus — Lyon</h3>
+                <p class="formation-years">2023 — 2026</p>
+                <p class="formation-degree">Bachelor Développeur Informatique, option Jeux Vidéo</p>
+            </div>
+        </div>
+
+        <div class="distinction-card">
+            <div class="distinction-icon">🏆</div>
+            <div class="distinction-content">
+                <h3>Game Jam VR — Vainqueur</h3>
+                <p>Jeu de cartes en réalité virtuelle développé sur week-end</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section dark-section">
+        <p class="section-label">02 — Compétences</p>
+        <h2>Stack <span class="accent">technique</span></h2>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programmation</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag primary">C#</span>
+                    <span class="skill-tag secondary">C++</span>
+                    <span class="skill-tag secondary">Python</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Game Engines</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag primary">Unity</span>
+                    <span class="skill-tag secondary">Unreal Engine</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Outils & Workflow</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag primary">Git / GitHub</span>
+                    <span class="skill-tag">Miro</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Spécialités</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag highlight">Génération procédurale</span>
+                    <span class="skill-tag highlight">Systèmes de gameplay</span>
+                    <span class="skill-tag">Level design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <p class="section-label">03 — Réalisations</p>
+        <h2>Projets <span class="accent">développés</span></h2>
+
+        <div class="projects-list">
+            <!-- Projet 1 : Génération Procédurale & Portails -->
+            <a class="project" href="https://github.com/Lukas-Beden/Procedural-Generation" target="_blank" rel="noopener noreferrer">
+                <span class="project-num">01</span>
+                <div class="project-body">
+                    <h3>Génération Procédurale & Portails</h3>
+                    <div class="project-meta">
+                        <span class="meta-badge">1 semaine</span>
+                        <span class="meta-badge">Équipe de 2</span>
+                        <span class="meta-badge">Unity</span>
+                    </div>
+                    <p>
+                        Système de portails dessinés dynamiquement par le joueur et génération
+                        procédurale de terrains avec placement d'assets.
+                    </p>
+                    <p class="project-role">
+                        <strong>Mon rôle :</strong> Développeur portails & génération procédurale
+                    </p>
+                    <p class="project-challenge">
+                        <strong>Défi :</strong> Créer des portails avec des formes dynamiques définies par le joueur
+                        et générer du terrain cohérent.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Procédural</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+                </div>
+                <span class="project-arrow">↗</span>
+            </a>
+
+            <!-- Projet 2 : Room Defenders -->
+            <a class="project" href="https://github.com/Lukas-Beden/Room-Defenders" target="_blank" rel="noopener noreferrer">
+                <span class="project-num">02</span>
+                <div class="project-body">
+                    <h3>Room Defenders</h3>
+                    <div class="project-meta">
+                        <span class="meta-badge">2 mois</span>
+                        <span class="meta-badge">4 tech + 2 art</span>
+                        <span class="meta-badge">Unity</span>
+                    </div>
+                    <p>
+                        Hero defense multijoueur avec système de gestion de compétences.
+                        Développement d'un système de compétences modulaire et de mécaniques de gameplay
+                        pour un jeu en réseau.
+                    </p>
+                    <p class="project-role">
+                        <strong>Mon rôle :</strong> Gestion de compétences & développeur gameplay
+                    </p>
+                    <p class="project-challenge">
+                        <strong>Défi :</strong> Premier projet multijoueur de l'équipe, gestion de la synchronisation
+                        réseau et des systèmes de compétences partagés.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Multijoueur</span>
+                        <span class="tag">Architecture</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+                </div>
+                <span class="project-arrow">↗</span>
+            </a>
+
+            <!-- Projet 3 : Switch 2D / 3D -->
+            <a class="project" href="https://github.com/Lukas-Beden/E3C-Switch-World" target="_blank" rel="noopener noreferrer">
+                <span class="project-num">03</span>
+                <div class="project-body">
+                    <h3>Switch 2D / 3D</h3>
+                    <div class="project-meta">
+                        <span class="meta-badge">1 semaine</span>
+                        <span class="meta-badge">Équipe de 2</span>
+                        <span class="meta-badge">Unity</span>
+                    </div>
+                    <p>
+                        Prototype de mécanique permettant de basculer dynamiquement entre une vue 2D et 3D.
+                        Adaptation des systèmes de physique, contrôles et assets en temps réel.
+                    </p>
+                    <p class="project-role">
+                        <strong>Mon rôle :</strong> Système de switch dimensionnel (personnage, assets, physique)
+                    </p>
+                    <p class="project-challenge">
+                        <strong>Défi :</strong> Gérer la cohérence spatiale lors du passage entre dimensions,
+                        collision, positionnement et mouvement du joueur.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Mécanique centrale</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">GitHub</span>
+                    </div>
+                </div>
+                <span class="project-arrow">↗</span>
+            </a>
+
+            <!-- Projet 4 : The Last Pulse -->
+            <a class="project" href="the-last-pulse.html">
+                <span class="project-num">04</span>
+                <div class="project-body">
+                    <h3>The Last Pulse — Game Concept</h3>
+                    <div class="project-meta">
+                        <span class="meta-badge">Concept solo</span>
+                        <span class="meta-badge">Roguelite</span>
+                    </div>
+                    <p>
+                        Conception complète d'un roguelite cyberpunk explorant la dialectique
+                        entre survie et perte d'humanité. Exercice de game design documenté
+                        avec systèmes de jeu détaillés.
+                    </p>
+                    <p class="project-role">
+                        <strong>Statut :</strong> Concept en attente de développement
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Game Design</span>
+                        <span class="tag">Systèmes</span>
+                        <span class="tag">Documentation</span>
+                    </div>
+                </div>
+                <span class="project-arrow">↗</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <p class="section-label">04 — Contact</p>
+        <h2>Restons en <span class="accent">contact</span></h2>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p class="contact-intro">
+                    Actuellement à la recherche d'un <span class="highlight">stage de 3 mois</span> (mi-mai 2025)
+                    ou d'une <span class="highlight">alternance de 2 ans</span> dans le développement de jeux vidéo.
+                </p>
+                <p class="contact-location">
+                    📍 Lyon, France
+                </p>
+
+                <div class="contact-methods">
+                    <a href="mailto:lukasbedendev@gmail.com" class="contact-method">
+                        <span class="contact-icon">📧</span>
+                        <div class="contact-details">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">lukasbedendev@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="tel:+33749007122" class="contact-method">
+                        <span class="contact-icon">📱</span>
+                        <div class="contact-details">
+                            <span class="contact-label">Téléphone</span>
+                            <span class="contact-value">07 49 00 71 22</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/Lukas-Beden" target="_blank" rel="noopener noreferrer" class="contact-method">
+                        <span class="contact-icon">💻</span>
+                        <div class="contact-details">
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/Lukas-Beden</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/lukas-beden" target="_blank" rel="noopener noreferrer" class="contact-method">
+                        <span class="contact-icon">💼</span>
+                        <div class="contact-details">
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">Lukas Beden</span>
+                        </div>
+                    </a>
+
+                    <a href="https://mishaloupe.itch.io" target="_blank" rel="noopener noreferrer" class="contact-method">
+                        <span class="contact-icon">🎮</span>
+                        <div class="contact-details">
+                            <span class="contact-label">Itch.io</span>
+                            <span class="contact-value">mishaloupe.itch.io</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-cta">
+                <a href="mailto:lukasbedendev@gmail.com" class="btn-primary btn-large">
+                    Me contacter
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="CV_Lukas_Beden.pdf" download class="btn-secondary btn-large">
+                    Télécharger mon CV
+                    <span class="btn-arrow">↓</span>
+                </a>
+                <p class="contact-note">Ouvert aux opportunités de stage et d'alternance</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 — Lukas Beden · Développeur Gameplay & Mécaniques</p>
     </footer>
 
     <script src="script.js"></script>
