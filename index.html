@@ -1,4 +1,183 @@
-﻿<!DOCTYPE html> 
+﻿<!--<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lukas Beden — Game Systems Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="stars-canvas"></canvas>
+
+    <nav class="nav">
+        <div class="nav-logo">Lukas Beden</div>
+        <ul class="nav-links">
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#procedural">Procédural</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">Game Systems Designer</p>
+            <h1>
+                Je conçois des <span class="highlight-teal">systèmes</span><br>
+                que les joueurs apprennent<br>
+                à <span class="highlight">comprendre</span>.
+            </h1>
+            <p class="hero-subtitle">
+                Génération procédurale
+                <span>·</span>
+                Mécaniques originales
+                <span>·</span>
+                Conception de jeux
+            </p>
+            <a href="#projects" class="btn-primary">
+                Explorer mes projets
+                <span class="btn-arrow">→</span>
+            </a>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+            Défiler
+        </div>
+    </header>
+
+    <section id="vision" class="section">
+        <p class="section-label">01 — Vision</p>
+        <h2>Ce qui me <span class="accent">guide</span></h2>
+        <p>
+            J'aime les jeux où la progression ne vient pas d'un arbre de compétences,
+            mais d'une réflexion autour de diverses mécaniques de jeu.
+            Outer Wilds, Tunic, Chant of Sennaar, des jeux où comprendre, c'est progresser.
+        </p>
+        <p>
+            Mon travail se concentre sur la création de mécaniques centrales fortes,
+            capables de générer des moments de découverte et d'émerveillement.
+        </p>
+    </section>
+
+    <section id="procedural" class="section dark-section">
+        <p class="section-label">02 — Centre d'intêret</p>
+        <h2>Génération <span class="accent">Procédurale</span></h2>
+        <p>
+            Concevoir des règles simples capables de produire une complexité cohérente.
+            Créer des mondes qui semblent vivants et qui le sont.
+        </p>
+        <div class="proc-grid">
+            <div class="proc-item" data-glyph="⬡">
+                <h3>Structures</h3>
+                <p>Level design algorithmique. Des espaces qui racontent sans narrateur.</p>
+            </div>
+            <div class="proc-item" data-glyph="⟳">
+                <h3>Systèmes</h3>
+                <p>Interactions entre mécaniques. L'originalité comme outil de design.</p>
+            </div>
+            <div class="proc-item" data-glyph="◈">
+                <h3>Originalité</h3>
+                <p>Des règles simples, des résultats surprenants. La règle crée le jeu.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <p class="section-label">03 — Travaux</p>
+        <h2>Projets <span class="accent">Sélectionnés</span></h2>
+
+        <div class="projects-list">
+            <a class="project" href="https://github.com/Lukas-Beden/Procedural-Generation" target="_blank" rel="noopener noreferrer">
+                <span class="project-num">01</span>
+                <div class="project-body">
+                    <h3>Génération Procédurale & Portails</h3>
+                    <p>
+                        Prototype basé sur la génération algorithmique de maps et
+                        un système de portails dessinés par le joueur.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Unity</span>
+                        <span class="tag">Procédural</span>
+                        <span class="tag">Mécanique centrale</span>
+                    </div>
+                </div>
+                <span class="project-arrow">↗</span>
+            </a>
+
+            <a class="project" href="https://github.com/Lukas-Beden/Room-Defenders" target="_blank" rel="noopener noreferrer">
+                <span class="project-num">02</span>
+                <div class="project-body">
+                    <h3>Room Defenders</h3>
+                    <p>
+                        Développement d'un système de gestion de compétences
+                        dans un hero defense.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Architecture</span>
+                        <span class="tag">Optimisation</span>
+                    </div>
+                </div>
+                <span class="project-arrow">↗</span>
+            </a>
+
+            <a class="project" href="https://github.com/Lukas-Beden/E3C-Switch-World" target="_blank" rel="noopener noreferrer">
+                <span class="project-num">03</span>
+                <div class="project-body">
+                    <h3>Switch 2D / 3D</h3>
+                    <p>
+                        Prototype permettant de basculer dynamiquement
+                        entre deux dimensions.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Prototype</span>
+                        <span class="tag">Mécanique centrale</span>
+                    </div>
+                </div>
+                <span class="project-arrow">↗</span>
+            </a>
+
+            <a class="project" href="the-last-pulse.html">
+                <span class="project-num">04</span>
+                <div class="project-body">
+                    <h3>The Last Pulse — Game Concept</h3>
+                    <p>
+                        Conception d'un roguelite cyberpunk jouant sur la problématique moral d'un choix
+                        entre survie et perte d'humanité. Exercice de game design documenté.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Game Design</span>
+                        <span class="tag">Systèmes</span>
+                        <span class="tag">Conception</span>
+                    </div>
+                </div>
+                <span class="project-arrow">↗</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <p class="section-label">04 — Contact</p>
+        <h2>Travaillons <span class="accent">ensemble</span></h2>
+        <p>Ouvert aux stages et aux discussions autour du game design.</p>
+        <a href="mailto:lukasbedendev@gmail.com" class="btn-primary">
+            Me contacter
+            <span class="btn-arrow">→</span>
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2025 — Lukas Beden &nbsp;·&nbsp; Game Systems Designer</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -128,110 +307,161 @@
         <h2>Projets <span class="accent">développés</span></h2>
 
         <div class="projects-list">
+
             <!-- Projet 1 : Génération Procédurale & Portails -->
-            <a class="project" href="https://github.com/Lukas-Beden/Procedural-Generation" target="_blank" rel="noopener noreferrer">
+            <div class="project">
                 <span class="project-num">01</span>
                 <div class="project-body">
-                    <h3>Génération Procédurale & Portails</h3>
-                    <div class="project-meta">
-                        <span class="meta-badge">1 semaine</span>
-                        <span class="meta-badge">Équipe de 2</span>
-                        <span class="meta-badge">Unity</span>
+                    <div class="project-header">
+                        <div>
+                            <h3>Génération Procédurale & Portails</h3>
+                            <div class="project-meta">
+                                <span class="meta-badge">Équipe de 2</span>
+                                <span class="meta-badge">Unity</span>
+                            </div>
+                        </div>
+                        <a class="project-link-btn" href="https://github.com/Lukas-Beden/Procedural-Generation" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                     </div>
+
+                    <div class="carousel" data-index="0">
+                        <div class="carousel-track">
+                            <img src="images/GenProcStart.png" alt="Plaines">
+                            <img src="images/GenProcDesert.png" alt="Désert">
+                            <img src="images/GenProcPortal.png" alt="Portail">
+                        </div>
+                        <button class="carousel-btn prev" aria-label="Précédent">‹</button>
+                        <button class="carousel-btn next" aria-label="Suivant">›</button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+
                     <p>
-                        Système de portails dessinés dynamiquement par le joueur et génération
-                        procédurale de terrains avec placement d'assets.
+                        Jeu d'exploration où les niveaux sont générés procéduralement. Le joueur récolte
+                        des pots de peinture pour dessiner un portail sur le sol et passer au niveau suivant.
+                        Biomes : plaines → désert → neige.
                     </p>
                     <p class="project-role">
-                        <strong>Mon rôle :</strong> Développeur portails & génération procédurale
-                    </p>
-                    <p class="project-challenge">
-                        <strong>Défi :</strong> Créer des portails avec des formes dynamiques définies par le joueur
-                        et générer du terrain cohérent.
+                        <strong>Mon rôle :</strong> Génération procédurale & système de portails
                     </p>
                     <div class="tags">
                         <span class="tag">Unity</span>
                         <span class="tag">Procédural</span>
                         <span class="tag">C#</span>
-                        <span class="tag">GitHub</span>
                     </div>
                 </div>
-                <span class="project-arrow">↗</span>
-            </a>
+            </div>
 
             <!-- Projet 2 : Room Defenders -->
-            <a class="project" href="https://github.com/Lukas-Beden/Room-Defenders" target="_blank" rel="noopener noreferrer">
+            <div class="project">
                 <span class="project-num">02</span>
                 <div class="project-body">
-                    <h3>Room Defenders</h3>
-                    <div class="project-meta">
-                        <span class="meta-badge">2 mois</span>
-                        <span class="meta-badge">4 tech + 2 art</span>
-                        <span class="meta-badge">Unity</span>
+                    <div class="project-header">
+                        <div>
+                            <h3>Room Defenders</h3>
+                            <div class="project-meta">
+                                <span class="meta-badge">2 mois</span>
+                                <span class="meta-badge">4 tech + 2 art</span>
+                                <span class="meta-badge">Unity</span>
+                            </div>
+                        </div>
+                        <a class="project-link-btn" href="https://github.com/Lukas-Beden/Room-Defenders" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                     </div>
+
+                    <div class="carousel" data-index="0">
+                        <div class="carousel-track">
+                            <img src="images/RoomDefendersRobobastos.png" alt="Robobastos">
+                            <img src="images/RoomDefendersGlocktopus.png" alt="Glocktopus">
+                            <img src="images/RoomDefendersGrappin.png" alt="Grappin">
+                        </div>
+                        <button class="carousel-btn prev" aria-label="Précédent">‹</button>
+                        <button class="carousel-btn next" aria-label="Suivant">›</button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+
                     <p>
-                        Hero defense multijoueur avec système de gestion de compétences.
-                        Développement d'un système de compétences modulaire et de mécaniques de gameplay
-                        pour un jeu en réseau.
+                        Prototype de hero shooter multijoueur. Deux personnages jouables dotés d'un grappin
+                        et d'attaques distinctes doivent éliminer les ennemis qui progressent vers le core du château.
                     </p>
                     <p class="project-role">
-                        <strong>Mon rôle :</strong> Gestion de compétences & développeur gameplay
-                    </p>
-                    <p class="project-challenge">
-                        <strong>Défi :</strong> Premier projet multijoueur de l'équipe, gestion de la synchronisation
-                        réseau et des systèmes de compétences partagés.
+                        <strong>Mon rôle :</strong> Système de compétences & développement gameplay
                     </p>
                     <div class="tags">
                         <span class="tag">Unity</span>
                         <span class="tag">Multijoueur</span>
-                        <span class="tag">Architecture</span>
                         <span class="tag">C#</span>
-                        <span class="tag">GitHub</span>
                     </div>
                 </div>
-                <span class="project-arrow">↗</span>
-            </a>
+            </div>
 
             <!-- Projet 3 : Switch 2D / 3D -->
-            <a class="project" href="https://github.com/Lukas-Beden/E3C-Switch-World" target="_blank" rel="noopener noreferrer">
+            <div class="project">
                 <span class="project-num">03</span>
                 <div class="project-body">
-                    <h3>Switch 2D / 3D</h3>
-                    <div class="project-meta">
-                        <span class="meta-badge">1 semaine</span>
-                        <span class="meta-badge">Équipe de 2</span>
-                        <span class="meta-badge">Unity</span>
+                    <div class="project-header">
+                        <div>
+                            <h3>Switch 2D / 3D</h3>
+                            <div class="project-meta">
+                                <span class="meta-badge">1 semaine</span>
+                                <span class="meta-badge">Équipe de 2</span>
+                                <span class="meta-badge">Unity</span>
+                            </div>
+                        </div>
+                        <a class="project-link-btn" href="https://github.com/Lukas-Beden/E3C-Switch-World" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                     </div>
+
+                    <div class="carousel" data-index="0">
+                        <div class="carousel-track">
+                            <img src="images/E3C_Enigme.png" alt="Énigme">
+                            <img src="images/E3C_2D.png" alt="Vue 2D">
+                            <img src="images/E3C_3D.png" alt="Vue 3D">
+                        </div>
+                        <button class="carousel-btn prev" aria-label="Précédent">‹</button>
+                        <button class="carousel-btn next" aria-label="Suivant">›</button>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+
                     <p>
-                        Prototype de mécanique permettant de basculer dynamiquement entre une vue 2D et 3D.
-                        Adaptation des systèmes de physique, contrôles et assets en temps réel.
+                        Prototype de puzzle game où le joueur bascule entre une vue 2D et 3D pour
+                        progresser dans les niveaux. Ce qui est impossible dans une dimension devient
+                        la clé dans l'autre.
                     </p>
                     <p class="project-role">
-                        <strong>Mon rôle :</strong> Système de switch dimensionnel (personnage, assets, physique)
-                    </p>
-                    <p class="project-challenge">
-                        <strong>Défi :</strong> Gérer la cohérence spatiale lors du passage entre dimensions,
-                        collision, positionnement et mouvement du joueur.
+                        <strong>Mon rôle :</strong> Système de switch dimensionnel (assets, physique, transition)
                     </p>
                     <div class="tags">
                         <span class="tag">Unity</span>
                         <span class="tag">Mécanique centrale</span>
                         <span class="tag">C#</span>
-                        <span class="tag">GitHub</span>
                     </div>
                 </div>
-                <span class="project-arrow">↗</span>
-            </a>
+            </div>
 
             <!-- Projet 4 : The Last Pulse -->
-            <a class="project" href="the-last-pulse.html">
+            <div class="project">
                 <span class="project-num">04</span>
                 <div class="project-body">
-                    <h3>The Last Pulse — Game Concept</h3>
-                    <div class="project-meta">
-                        <span class="meta-badge">Concept solo</span>
-                        <span class="meta-badge">Roguelite</span>
+                    <div class="project-header">
+                        <div>
+                            <h3>The Last Pulse — Game Concept</h3>
+                            <div class="project-meta">
+                                <span class="meta-badge">Concept solo</span>
+                                <span class="meta-badge">Roguelite</span>
+                            </div>
+                        </div>
+                        <a class="project-link-btn" href="the-last-pulse.html">Voir le concept ↗</a>
                     </div>
+
                     <p>
                         Conception complète d'un roguelite cyberpunk explorant la dialectique
                         entre survie et perte d'humanité. Exercice de game design documenté
@@ -246,8 +476,8 @@
                         <span class="tag">Documentation</span>
                     </div>
                 </div>
-                <span class="project-arrow">↗</span>
-            </a>
+            </div>
+
         </div>
     </section>
 
@@ -313,10 +543,6 @@
                     Me contacter
                     <span class="btn-arrow">→</span>
                 </a>
-                <a href="CV_Lukas_Beden.pdf" download class="btn-secondary btn-large">
-                    Télécharger mon CV
-                    <span class="btn-arrow">↓</span>
-                </a>
                 <p class="contact-note">Ouvert aux opportunités de stage et d'alternance</p>
             </div>
         </div>
@@ -327,5 +553,41 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        /* ── Carousels ───────────────────────────────────────── */
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const track = carousel.querySelector('.carousel-track');
+            const dots = carousel.querySelectorAll('.dot');
+            const images = carousel.querySelectorAll('img');
+            let current = 0;
+
+            function goTo(index) {
+                current = (index + images.length) % images.length;
+                track.style.transform = `translateX(-${current * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+            }
+
+            carousel.querySelector('.prev').addEventListener('click', e => {
+                e.preventDefault(); e.stopPropagation();
+                goTo(current - 1);
+            });
+            carousel.querySelector('.next').addEventListener('click', e => {
+                e.preventDefault(); e.stopPropagation();
+                goTo(current + 1);
+            });
+            dots.forEach((dot, i) => dot.addEventListener('click', e => {
+                e.preventDefault(); e.stopPropagation();
+                goTo(i);
+            }));
+
+            // Swipe tactile
+            let startX = 0;
+            carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+            carousel.addEventListener('touchend', e => {
+                const diff = startX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+            });
+        });
+    </script>
 </body>
 </html>
