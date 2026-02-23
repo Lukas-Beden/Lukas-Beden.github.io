@@ -39,7 +39,7 @@ if (isTouchDevice) {
         ripple.style.left = touch.clientX + 'px';
         ripple.style.top = touch.clientY + 'px';
         document.body.appendChild(ripple);
-        ripple.addEventListener('animationend', () => ripple.remove());
+        setTimeout(() => ripple.remove(), 650);
     }, { passive: true });
 }
 
