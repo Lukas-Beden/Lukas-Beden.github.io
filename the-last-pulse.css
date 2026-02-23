@@ -794,3 +794,101 @@ footer {
         margin-right: 8px;
     }
 }
+
+/* ── Touch device — curseur natif ───────────────────────── */
+@media (pointer: coarse) {
+    body {
+        cursor: auto;
+    }
+
+    .cursor-dot,
+    .cursor-crosshair,
+    .cursor-ring {
+        display: none !important;
+    }
+}
+
+/* ── Tap ripple cyberpunk ────────────────────────────────── */
+.touch-ripple {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    animation: tapFade 0.7s ease-out forwards;
+}
+
+    .touch-ripple::before {
+        content: '+';
+        position: absolute;
+        color: var(--cyan);
+        font-size: 22px;
+        font-weight: 300;
+        animation: tapCrosshair 0.7s ease-out forwards;
+    }
+
+    .touch-ripple::after {
+        content: '';
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--cyan);
+        animation: tapScan 0.7s ease-out forwards;
+    }
+
+@keyframes tapCrosshair {
+    0% {
+        opacity: 1;
+        transform: scale(0.5) rotate(0deg);
+        color: var(--cyan);
+    }
+
+    40% {
+        opacity: 1;
+        transform: scale(1.2) rotate(45deg);
+        color: var(--red);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.6) rotate(90deg);
+        color: var(--red);
+    }
+}
+
+@keyframes tapScan {
+    0% {
+        opacity: 0.9;
+        transform: scale(0.3);
+        border-color: var(--cyan);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.4);
+        border-color: var(--red);
+        border-width: 2px;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+        border-color: var(--red);
+    }
+}
+
+@keyframes tapFade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

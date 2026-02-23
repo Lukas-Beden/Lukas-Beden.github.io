@@ -1,69 +1,80 @@
-// ─── Custom cursor ──────────────────────────────────────────
+// ─── Détection tactile ──────────────────────────────────────
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-const cursorDot = document.createElement('div');
-const cursorCrosshair = document.createElement('div');
-const cursorRing = document.createElement('div');
+// ─── Custom cursor (desktop uniquement) ─────────────────────
+if (!isTouchDevice) {
+    const cursorDot = document.createElement('div');
+    const cursorCrosshair = document.createElement('div');
+    const cursorRing = document.createElement('div');
 
-cursorDot.className = 'cursor-dot';
-cursorCrosshair.className = 'cursor-crosshair';
-cursorRing.className = 'cursor-ring';
+    cursorDot.className = 'cursor-dot';
+    cursorCrosshair.className = 'cursor-crosshair';
+    cursorRing.className = 'cursor-ring';
 
-document.body.append(cursorDot, cursorCrosshair, cursorRing);
+    document.body.append(cursorDot, cursorCrosshair, cursorRing);
 
-let mouseX = 0, mouseY = 0;
-let crosshairX = 0, crosshairY = 0;
-let ringX = 0, ringY = 0;
+    let mouseX = 0, mouseY = 0;
+    let crosshairX = 0, crosshairY = 0;
+    let ringX = 0, ringY = 0;
 
-// Track mouse position
-document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+    });
 
-    // Dot follows immediately
-    cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top = mouseY + 'px';
-});
+    document.addEventListener('mousedown', () => {
+        cursorRing.style.transform = 'translate(-50%, -50%) scale(0.8)';
+        cursorCrosshair.style.opacity = '1';
+    });
 
-// Click animation
-document.addEventListener('mousedown', () => {
-    cursorRing.style.transform = 'translate(-50%, -50%) scale(0.8)';
-    cursorCrosshair.style.opacity = '1';
-});
+    document.addEventListener('mouseup', () => {
+        cursorRing.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorCrosshair.style.opacity = '0.6';
+    });
 
-document.addEventListener('mouseup', () => {
-    cursorRing.style.transform = 'translate(-50%, -50%) scale(1)';
-    cursorCrosshair.style.opacity = '0.6';
-});
+    // Occasional glitch effect
+    setInterval(() => {
+        if (Math.random() > 0.7) {
+            cursorCrosshair.style.filter = 'hue-rotate(180deg)';
+            cursorRing.style.borderColor = 'var(--red)';
+            setTimeout(() => {
+                cursorCrosshair.style.filter = 'none';
+                cursorRing.style.borderColor = 'var(--cyan)';
+            }, 80);
+        }
+    }, 3000);
 
-// Occasional glitch effect
-setInterval(() => {
-    if (Math.random() > 0.7) { // 30% chance every interval
-        cursorCrosshair.style.filter = 'hue-rotate(180deg)';
-        cursorRing.style.borderColor = 'var(--red)';
+    (function animateCursor() {
+        crosshairX += (mouseX - crosshairX) * 0.2;
+        crosshairY += (mouseY - crosshairY) * 0.2;
+        cursorCrosshair.style.left = crosshairX + 'px';
+        cursorCrosshair.style.top = crosshairY + 'px';
 
-        setTimeout(() => {
-            cursorCrosshair.style.filter = 'none';
-            cursorRing.style.borderColor = 'var(--cyan)';
-        }, 80);
-    }
-}, 3000); // Check every 3 seconds
+        ringX += (mouseX - ringX) * 0.1;
+        ringY += (mouseY - ringY) * 0.1;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
 
-// Smooth follow for crosshair and ring
-(function animateCursor() {
-    // Crosshair follows with slight delay
-    crosshairX += (mouseX - crosshairX) * 0.2;
-    crosshairY += (mouseY - crosshairY) * 0.2;
-    cursorCrosshair.style.left = crosshairX + 'px';
-    cursorCrosshair.style.top = crosshairY + 'px';
+        requestAnimationFrame(animateCursor);
+    })();
+}
 
-    // Ring follows with more delay
-    ringX += (mouseX - ringX) * 0.1;
-    ringY += (mouseY - ringY) * 0.1;
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top = ringY + 'px';
+// ─── Tap ripple cyberpunk (mobile uniquement) ────────────────
+if (isTouchDevice) {
+    document.body.style.cursor = 'auto';
 
-    requestAnimationFrame(animateCursor);
-})();
+    document.addEventListener('touchstart', e => {
+        const touch = e.touches[0];
+        const ripple = document.createElement('div');
+        ripple.className = 'touch-ripple';
+        ripple.style.left = touch.clientX + 'px';
+        ripple.style.top = touch.clientY + 'px';
+        document.body.appendChild(ripple);
+        ripple.addEventListener('animationend', () => ripple.remove());
+    }, { passive: true });
+}
 
 // ─── Scroll-based cybernétisation tracker ───────────────────
 

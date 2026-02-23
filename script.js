@@ -1,27 +1,47 @@
-﻿/* ── Cursor ─────────────────────────────────────────────── */
-const cursorDot = document.createElement('div');
-const cursorRing = document.createElement('div');
-cursorDot.className = 'cursor-dot';
-cursorRing.className = 'cursor-ring';
-document.body.append(cursorDot, cursorRing);
+﻿/* ── Détection tactile ───────────────────────────────────── */
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-let mouseX = 0, mouseY = 0;
-let ringX = 0, ringY = 0;
+/* ── Cursor (desktop uniquement) ────────────────────────── */
+if (!isTouchDevice) {
+    const cursorDot = document.createElement('div');
+    const cursorRing = document.createElement('div');
+    cursorDot.className = 'cursor-dot';
+    cursorRing.className = 'cursor-ring';
+    document.body.append(cursorDot, cursorRing);
 
-document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top = mouseY + 'px';
-});
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
 
-(function animateCursor() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top = ringY + 'px';
-    requestAnimationFrame(animateCursor);
-})();
+    document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+    });
+
+    (function animateCursor() {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+        requestAnimationFrame(animateCursor);
+    })();
+}
+
+/* ── Tap ripple (mobile uniquement) ─────────────────────── */
+if (isTouchDevice) {
+    document.body.style.cursor = 'auto';
+
+    document.addEventListener('touchstart', e => {
+        const touch = e.touches[0];
+        const ripple = document.createElement('div');
+        ripple.className = 'touch-ripple';
+        ripple.style.left = touch.clientX + 'px';
+        ripple.style.top = touch.clientY + 'px';
+        document.body.appendChild(ripple);
+        ripple.addEventListener('animationend', () => ripple.remove());
+    }, { passive: true });
+}
 
 /* ── Constellation canvas ────────────────────────────────── */
 const canvas = document.getElementById('stars-canvas');
@@ -117,10 +137,12 @@ function animate() {
 initStars();
 animate();
 
-/* ── Parallax hero ───────────────────────────────────────── */
+/* ── Parallax hero + navbar ──────────────────────────────── */
 const hero = document.querySelector('.hero');
+const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
     hero.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+    nav.classList.toggle('scrolled', window.scrollY > 10);
 });
 
 /* ── Intersection Observer (sections + projects) ─────────── */
