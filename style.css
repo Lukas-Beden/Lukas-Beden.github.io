@@ -1391,11 +1391,23 @@ footer {
 /* ─── Responsive ─────────────────────────────────────────── */
 @media (max-width: 768px) {
     .nav {
-        padding: 18px 24px;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     .nav-links {
-        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+        width: 100%;
+        padding-top: 6px;
+        border-top: 1px solid var(--border);
+    }
+
+    .nav a {
+        font-size: 0.62rem;
+        letter-spacing: 0.15em;
     }
 
     .section {
@@ -1415,13 +1427,32 @@ footer {
         gap: 40px;
     }
 
-    .project {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
-
     .project-num {
         display: none;
+    }
+
+    /* Projets : texte pleine largeur, carousel en dessous */
+    .project-body {
+        grid-template-columns: 1fr !important;
+    }
+
+        .project-body > p,
+        .project-body > .project-role,
+        .project-body > .tags,
+        .project-header {
+            grid-column: 1 !important;
+        }
+
+    .carousel-wrapper {
+        grid-column: 1 !important;
+        grid-row: unset !important;
+        width: 100% !important;
+        margin: 16px 0 0 0 !important;
+    }
+
+    .btn-large {
+        width: 100%;
+        justify-content: center;
     }
 }
 /* ── Carousel ───────────────────────────────────────────── */
@@ -1623,15 +1654,37 @@ footer {
         color: #0d1117;
     }
 
-@media (max-width: 768px) {
-    .project-body {
-        grid-template-columns: 1fr;
+
+
+/* ── The Last Pulse concept button ──────────────────────── */
+.concept-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    text-decoration: none;
+    border: 1px solid rgba(232, 162, 74, 0.3);
+    padding: 7px 14px;
+    border-radius: 3px;
+    background: rgba(232, 162, 74, 0.04);
+    transition: border-color 0.3s, background 0.3s, gap 0.3s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+    .concept-link-btn svg {
+        transition: transform 0.3s;
     }
 
-    .carousel-wrapper {
-        grid-column: 1;
-        grid-row: unset;
-        width: 100%;
-        margin-top: 20px;
+    .concept-link-btn:hover {
+        border-color: var(--accent2);
+        background: rgba(232, 162, 74, 0.1);
+        gap: 12px;
     }
-}
+
+        .concept-link-btn:hover svg {
+            transform: translateX(3px);
+        }
