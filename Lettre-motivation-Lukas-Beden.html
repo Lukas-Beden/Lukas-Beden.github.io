@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettre de Motivation — Lukas Beden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #04090f;
+            --bg2: #070e18;
+            --surface: #0b1623;
+            --border: rgba(94, 205, 190, 0.15);
+            --accent: #5ecdbf;
+            --accent2: #e8a24a;
+            --text: #c8d8e8;
+            --muted: rgba(200, 216, 232, 0.55);
+            --glow: rgba(94, 205, 190, 0.18);
+            --red: #e05c5c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 10mm 16mm 10mm 16mm;
+            position: relative;
+            overflow: hidden;
+        }
+
+            /* Decorative top line */
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+            }
+
+        /* ── Header ─── */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 7mm;
+            padding-bottom: 5mm;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .name {
+            font-family: 'Cinzel', serif;
+            font-size: 22pt;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--text);
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 7.5pt;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 7.5pt;
+            color: var(--muted);
+            line-height: 2;
+            letter-spacing: 0.05em;
+        }
+
+            .header-right a {
+                color: var(--accent);
+                text-decoration: none;
+            }
+
+        /* ── Meta band ─── */
+        .meta-band {
+            display: flex;
+            gap: 6mm;
+            margin-bottom: 7mm;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .meta-label {
+            font-size: 6pt;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .meta-value {
+            font-size: 8pt;
+            color: var(--text);
+        }
+
+        /* ── Recipient block ─── */
+        .recipient-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6mm;
+        }
+
+        .recipient {
+            font-size: 8.5pt;
+            line-height: 2;
+            color: var(--muted);
+        }
+
+            .recipient .placeholder {
+                color: var(--accent2);
+                font-style: italic;
+            }
+
+        .date-block {
+            text-align: right;
+            font-size: 7.5pt;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Objet ─── */
+        .objet {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6mm;
+            padding: 4mm 5mm;
+            border: 1px solid var(--border);
+            background: rgba(94, 205, 190, 0.03);
+        }
+
+            .objet::before {
+                content: '';
+                display: block;
+                width: 3px;
+                height: 100%;
+                background: var(--accent);
+                flex-shrink: 0;
+                align-self: stretch;
+            }
+
+        .objet-label {
+            font-size: 6.5pt;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-right: 4px;
+        }
+
+        .objet-text {
+            font-size: 8pt;
+            color: var(--text);
+        }
+
+            .objet-text .placeholder {
+                color: var(--accent2);
+                font-style: italic;
+            }
+
+        /* ── Salutation ─── */
+        .salutation {
+            font-size: 8.5pt;
+            color: var(--muted);
+            margin-bottom: 5mm;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Body ─── */
+        .body-text {
+            font-size: 8.5pt;
+            line-height: 1.85;
+            color: var(--muted);
+            margin-bottom: 4mm;
+            text-align: justify;
+        }
+
+            .body-text .highlight {
+                color: var(--accent2);
+                font-weight: 700;
+            }
+
+            .body-text .accent {
+                color: var(--accent);
+            }
+
+            .body-text .placeholder {
+                color: var(--accent2);
+                font-style: italic;
+                font-weight: 700;
+            }
+
+        /* ── Closing ─── */
+        .closing {
+            font-size: 8pt;
+            color: var(--muted);
+            margin-top: 5mm;
+            margin-bottom: 5mm;
+            line-height: 2;
+        }
+
+        .signature-block {
+            margin-top: 6mm;
+        }
+
+        .sig-name {
+            font-family: 'Cinzel', serif;
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 0.04em;
+            margin-bottom: 2mm;
+        }
+
+        .sig-links {
+            font-size: 7pt;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            line-height: 2;
+        }
+
+        /* ── Disclaimer ─── */
+        .disclaimer {
+            position: absolute;
+            bottom: 8mm;
+            left: 16mm;
+            right: 16mm;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 3mm 4mm;
+            border: 1px solid rgba(224, 92, 92, 0.2);
+            background: rgba(224, 92, 92, 0.03);
+            font-size: 6.5pt;
+            color: rgba(224, 92, 92, 0.7);
+            letter-spacing: 0.1em;
+        }
+
+            .disclaimer::before {
+                content: '[ ... ]';
+                color: var(--accent2);
+                font-weight: 700;
+                flex-shrink: 0;
+            }
+
+        /* Decorative glyph */
+        .corner-glyph {
+            position: absolute;
+            top: 18mm;
+            right: 16mm;
+            font-family: 'Cinzel', serif;
+            font-size: 80pt;
+            color: var(--accent);
+            opacity: 0.03;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* Divider */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--border);
+            margin: 6mm 0;
+        }
+
+        /* ── Print ─── */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .disclaimer {
+                position: fixed;
+                bottom: 8mm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="corner-glyph">◈</div>
+
+    <!-- ── Header ── -->
+    <div class="header">
+        <div class="header-left">
+            <div class="name">Lukas Beden</div>
+            <div class="title">Développeur Gameplay · Unity / C# · Génération Procédurale</div>
+        </div>
+        <div class="header-right">
+            07 49 00 71 22<br>
+            <a href="mailto:lukasbedendev@gmail.com">lukasbedendev@gmail.com</a><br>
+            Lyon, France<br>
+            <a href="https://github.com/Lukas-Beden">github.com/Lukas-Beden</a><br>
+            <a href="https://mishaloupe.itch.io">mishaloupe.itch.io</a>
+        </div>
+    </div>
+
+    <!-- ── Meta band ── -->
+    <div class="meta-band">
+        <div class="meta-item">
+            <span class="meta-label">Poste visé</span>
+            <span class="meta-value placeholder">[ Intitulé du poste ]</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Type</span>
+            <span class="meta-value placeholder">[ Stage 3 mois / Alternance 2 ans ]</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Disponibilité</span>
+            <span class="meta-value placeholder">[ Date de début ]</span>
+        </div>
+    </div>
+
+    <!-- ── Recipient + Date ── -->
+    <div class="recipient-row">
+        <div class="recipient">
+            <span class="placeholder">[ Nom de l'entreprise ]</span><br>
+            <span class="placeholder">[ Adresse ]</span><br>
+            <span class="placeholder">[ Code postal, Ville ]</span>
+        </div>
+        <div class="date-block">
+            Lyon, le <span class="placeholder">[ Date ]</span>
+        </div>
+    </div>
+
+    <!-- ── Objet ── -->
+    <div class="objet">
+        <span class="objet-label">Objet</span>
+        <span class="objet-text">
+            Candidature — <span class="placeholder">[ Intitulé du poste ]</span> — <span class="placeholder">[ Stage 3 mois / Alternance 2 ans ]</span>
+        </span>
+    </div>
+
+    <!-- ── Salutation ── -->
+    <div class="salutation">Madame, Monsieur,</div>
+
+    <!-- ── Body ── -->
+    <p class="body-text">
+        Étudiant en <span class="highlight">Bachelor Développeur Informatique option Jeu Vidéo</span> à Lyon,
+        je suis à la recherche d'un <span class="placeholder">[ stage 3 mois / alternance 2 ans ]</span> en développement gameplay
+        à partir du <span class="placeholder">[ date de début ]</span>. Votre studio
+        <span class="placeholder">[ nom de l'entreprise ]</span> retient particulièrement mon attention :
+        <span class="placeholder">[ raison précise : vos mécaniques de jeux / un projet spécifique ]</span>.
+    </p>
+
+    <p class="body-text">
+        Mes projets scolaires m'ont permis de développer une expertise concrète en <span class="accent">Unity</span> et <span class="accent">C#</span>.
+        J'ai notamment conçu et implémenté un système de génération procédurale de niveaux couplé à un mécanisme
+        de portails dessinés par le joueur, ainsi qu'un prototype de puzzle game exploitant une bascule dynamique
+        entre vue 2D et 3D, dont j'ai géré la cohérence spatiale, la physique et les transitions en temps réel.
+        J'ai aussi contribué à un hero shooter multijoueur en équipe de six, avec la responsabilité du système de compétences.
+    </p>
+
+    <p class="body-text">
+        Ce qui m'anime avant tout, c'est la conception de mécaniques qui surprennent et engagent le joueur —
+        des systèmes dont la découverte procure un sentiment d'émerveillement.
+        Rejoindre votre équipe serait l'opportunité de confronter cette vision à un contexte professionnel
+        <span class="placeholder">[ ex : sur un projet en cours ]</span>
+        et d'y apporter une énergie créative et technique réelle.
+    </p>
+
+    <p class="body-text">
+        Vous trouverez l'ensemble de mes projets sur mon portfolio et mon GitHub ci-dessous.
+        Je reste disponible pour un entretien à votre convenance.
+    </p>
+
+    <!-- ── Closing ── -->
+    <div class="closing">
+        Dans l'attente de vous lire, veuillez agréer, Madame, Monsieur,<br>
+        l'expression de mes salutations distinguées.
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── Signature ── -->
+    <div class="signature-block">
+        <div class="sig-name">Lukas Beden</div>
+        <div class="sig-links">
+            lukas-beden.github.io &nbsp;·&nbsp; github.com/Lukas-Beden<br>
+            lukasbedendev@gmail.com &nbsp;·&nbsp; 07 49 00 71 22
+        </div>
+    </div>
+
+    <!-- ── Disclaimer ── -->
+    <!--<div class="disclaimer">
+        Zones en orange à compléter avant envoi
+    </div>-->
+
+</body>
+</html>
