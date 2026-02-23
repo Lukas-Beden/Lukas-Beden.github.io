@@ -1,183 +1,4 @@
-﻿<!--<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lukas Beden — Game Systems Designer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <canvas id="stars-canvas"></canvas>
-
-    <nav class="nav">
-        <div class="nav-logo">Lukas Beden</div>
-        <ul class="nav-links">
-            <li><a href="#vision">Vision</a></li>
-            <li><a href="#procedural">Procédural</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-content">
-            <p class="hero-eyebrow">Game Systems Designer</p>
-            <h1>
-                Je conçois des <span class="highlight-teal">systèmes</span><br>
-                que les joueurs apprennent<br>
-                à <span class="highlight">comprendre</span>.
-            </h1>
-            <p class="hero-subtitle">
-                Génération procédurale
-                <span>·</span>
-                Mécaniques originales
-                <span>·</span>
-                Conception de jeux
-            </p>
-            <a href="#projects" class="btn-primary">
-                Explorer mes projets
-                <span class="btn-arrow">→</span>
-            </a>
-        </div>
-        <div class="scroll-hint">
-            <div class="scroll-line"></div>
-            Défiler
-        </div>
-    </header>
-
-    <section id="vision" class="section">
-        <p class="section-label">01 — Vision</p>
-        <h2>Ce qui me <span class="accent">guide</span></h2>
-        <p>
-            J'aime les jeux où la progression ne vient pas d'un arbre de compétences,
-            mais d'une réflexion autour de diverses mécaniques de jeu.
-            Outer Wilds, Tunic, Chant of Sennaar, des jeux où comprendre, c'est progresser.
-        </p>
-        <p>
-            Mon travail se concentre sur la création de mécaniques centrales fortes,
-            capables de générer des moments de découverte et d'émerveillement.
-        </p>
-    </section>
-
-    <section id="procedural" class="section dark-section">
-        <p class="section-label">02 — Centre d'intêret</p>
-        <h2>Génération <span class="accent">Procédurale</span></h2>
-        <p>
-            Concevoir des règles simples capables de produire une complexité cohérente.
-            Créer des mondes qui semblent vivants et qui le sont.
-        </p>
-        <div class="proc-grid">
-            <div class="proc-item" data-glyph="⬡">
-                <h3>Structures</h3>
-                <p>Level design algorithmique. Des espaces qui racontent sans narrateur.</p>
-            </div>
-            <div class="proc-item" data-glyph="⟳">
-                <h3>Systèmes</h3>
-                <p>Interactions entre mécaniques. L'originalité comme outil de design.</p>
-            </div>
-            <div class="proc-item" data-glyph="◈">
-                <h3>Originalité</h3>
-                <p>Des règles simples, des résultats surprenants. La règle crée le jeu.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <p class="section-label">03 — Travaux</p>
-        <h2>Projets <span class="accent">Sélectionnés</span></h2>
-
-        <div class="projects-list">
-            <a class="project" href="https://github.com/Lukas-Beden/Procedural-Generation" target="_blank" rel="noopener noreferrer">
-                <span class="project-num">01</span>
-                <div class="project-body">
-                    <h3>Génération Procédurale & Portails</h3>
-                    <p>
-                        Prototype basé sur la génération algorithmique de maps et
-                        un système de portails dessinés par le joueur.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Unity</span>
-                        <span class="tag">Procédural</span>
-                        <span class="tag">Mécanique centrale</span>
-                    </div>
-                </div>
-                <span class="project-arrow">↗</span>
-            </a>
-
-            <a class="project" href="https://github.com/Lukas-Beden/Room-Defenders" target="_blank" rel="noopener noreferrer">
-                <span class="project-num">02</span>
-                <div class="project-body">
-                    <h3>Room Defenders</h3>
-                    <p>
-                        Développement d'un système de gestion de compétences
-                        dans un hero defense.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Architecture</span>
-                        <span class="tag">Optimisation</span>
-                    </div>
-                </div>
-                <span class="project-arrow">↗</span>
-            </a>
-
-            <a class="project" href="https://github.com/Lukas-Beden/E3C-Switch-World" target="_blank" rel="noopener noreferrer">
-                <span class="project-num">03</span>
-                <div class="project-body">
-                    <h3>Switch 2D / 3D</h3>
-                    <p>
-                        Prototype permettant de basculer dynamiquement
-                        entre deux dimensions.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Prototype</span>
-                        <span class="tag">Mécanique centrale</span>
-                    </div>
-                </div>
-                <span class="project-arrow">↗</span>
-            </a>
-
-            <a class="project" href="the-last-pulse.html">
-                <span class="project-num">04</span>
-                <div class="project-body">
-                    <h3>The Last Pulse — Game Concept</h3>
-                    <p>
-                        Conception d'un roguelite cyberpunk jouant sur la problématique moral d'un choix
-                        entre survie et perte d'humanité. Exercice de game design documenté.
-                    </p>
-                    <div class="tags">
-                        <span class="tag">Game Design</span>
-                        <span class="tag">Systèmes</span>
-                        <span class="tag">Conception</span>
-                    </div>
-                </div>
-                <span class="project-arrow">↗</span>
-            </a>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <p class="section-label">04 — Contact</p>
-        <h2>Travaillons <span class="accent">ensemble</span></h2>
-        <p>Ouvert aux stages et aux discussions autour du game design.</p>
-        <a href="mailto:lukasbedendev@gmail.com" class="btn-primary">
-            Me contacter
-            <span class="btn-arrow">→</span>
-        </a>
-    </section>
-
-    <footer>
-        <p>© 2025 — Lukas Beden &nbsp;·&nbsp; Game Systems Designer</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>-->
-
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -248,7 +69,7 @@
             <div class="formation-content">
                 <h3>Gaming Campus — Lyon</h3>
                 <p class="formation-years">2023 — 2026</p>
-                <p class="formation-degree">Bachelor Développeur Informatique, option Jeux Vidéo</p>
+                <p class="formation-degree">En cours - Bachelor Développeur Informatique, option Jeux Vidéo</p>
             </div>
         </div>
 
@@ -497,7 +318,7 @@
         <div class="contact-grid">
             <div class="contact-info">
                 <p class="contact-intro">
-                    Actuellement à la recherche d'un <span class="highlight">stage de 3 mois</span> (mi-mai 2025)
+                    Actuellement à la recherche d'un <span class="highlight">stage de 3 mois</span> (mi-mai 2026)
                     ou d'une <span class="highlight">alternance de 2 ans</span> dans le développement de jeux vidéo.
                 </p>
                 <p class="contact-location">
@@ -562,7 +383,7 @@
     </section>
 
     <footer>
-        <p>© 2025 — Lukas Beden · Développeur Gameplay & Mécaniques</p>
+        <p>© 2026 — Lukas Beden · Développeur Gameplay & Mécaniques</p>
     </footer>
 
     <script src="script.js"></script>
