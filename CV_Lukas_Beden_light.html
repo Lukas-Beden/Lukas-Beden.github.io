@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Lukas Beden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f2f5ef;
+            --bg2: #e5e9e0;
+            --surface: #d8ddd2;
+            --border: rgba(20, 80, 65, 0.2);
+            --accent: #1e8a78;
+            --accent2: #a05c14;
+            --text: #0c1810;
+            --muted: #2e4038;
+            --glow: rgba(30, 138, 120, 0.12);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 10mm 14mm 10mm 14mm;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+        }
+
+        /* ── Header ── */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 5mm;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 5mm;
+        }
+
+        .name {
+            font-family: 'Cinzel', serif;
+            font-size: 22pt;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--text);
+        }
+
+        .title-line {
+            font-size: 7pt;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 7.5pt;
+            color: var(--muted);
+            line-height: 2;
+        }
+        .header-right a { color: var(--accent); text-decoration: none; }
+
+        /* ── Two columns ── */
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 6mm;
+        }
+
+        /* ── Section ── */
+        .section { margin-bottom: 5mm; }
+
+        .section-title {
+            font-size: 6pt;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2mm;
+            margin-bottom: 3mm;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 14px; height: 1px;
+            background: var(--accent);
+        }
+
+        /* ── Skills ── */
+        .skill-group { margin-bottom: 3mm; }
+        .skill-label {
+            font-size: 6pt;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent2);
+            margin-bottom: 1.5mm;
+        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 2mm; }
+        .tag {
+            font-size: 6.5pt;
+            padding: 1.5mm 3mm;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            border-radius: 2px;
+        }
+        .tag.primary { border-color: var(--accent); color: var(--accent); background: rgba(42,122,106,0.06); }
+        .tag.accent2 { border-color: var(--accent2); color: var(--accent2); background: rgba(160,98,26,0.06); }
+
+        /* ── Formation ── */
+        .formation-item { margin-bottom: 3mm; }
+        .formation-school {
+            font-family: 'Cinzel', serif;
+            font-size: 8pt;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 0.03em;
+        }
+        .formation-years {
+            font-size: 6.5pt;
+            color: var(--accent);
+            margin: 1mm 0;
+        }
+        .formation-degree {
+            font-size: 7pt;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ── Badge distinction ── */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 6.5pt;
+            padding: 1.5mm 3mm;
+            border: 1px solid var(--accent2);
+            color: var(--accent2);
+            background: rgba(160,98,26,0.05);
+            margin-top: 2mm;
+        }
+
+        /* ── Projects ── */
+        .project { margin-bottom: 4mm; padding-bottom: 4mm; border-bottom: 1px solid var(--border); }
+        .project:last-child { border-bottom: none; }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5mm;
+            gap: 4mm;
+        }
+
+        .project-title {
+            font-family: 'Cinzel', serif;
+            font-size: 8.5pt;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 0.03em;
+        }
+
+        .project-meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2mm;
+            margin-bottom: 1.5mm;
+        }
+
+        .meta-chip {
+            font-size: 6pt;
+            padding: 1mm 2.5mm;
+            background: rgba(42,122,106,0.08);
+            border: 1px solid rgba(42,122,106,0.2);
+            color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .project-desc {
+            font-size: 7.5pt;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1.5mm;
+        }
+
+        .project-role {
+            font-size: 7pt;
+            color: var(--muted);
+        }
+        .project-role strong { color: var(--accent); }
+
+        .project-tags { display: flex; flex-wrap: wrap; gap: 1.5mm; margin-top: 1.5mm; }
+        .project-tag {
+            font-size: 5.5pt;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 1mm 2.5mm;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            border-radius: 2px;
+        }
+
+        .github-link {
+            font-size: 6.5pt;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        /* ── Contact side ── */
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 3mm;
+            margin-bottom: 2.5mm;
+        }
+        .contact-icon { color: var(--accent); font-size: 8pt; line-height: 1.6; }
+        .contact-info { font-size: 7pt; color: var(--muted); line-height: 1.6; }
+        .contact-info a { color: var(--accent); text-decoration: none; }
+        .contact-type { font-size: 5.5pt; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent2); }
+
+        /* ── Corner glyph ── */
+        .corner-glyph {
+            position: absolute;
+            top: 20mm; right: 14mm;
+            font-family: 'Cinzel', serif;
+            font-size: 70pt;
+            color: var(--accent);
+            opacity: 0.04;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media print {
+            @page { size: A4; margin: 0; }
+            body {
+                margin: 0;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="corner-glyph">◈</div>
+
+    <!-- Header -->
+    <div class="header">
+        <div>
+            <div class="name">Lukas Beden</div>
+            <div class="title-line">Développeur Gameplay · Unity / C# · Génération Procédurale</div>
+        </div>
+        <div class="header-right">
+            07 49 00 71 22<br>
+            <a href="mailto:lukasbeden314@gmail.com">lukasbeden314@gmail.com</a><br>
+            Lyon, France<br>
+            <a href="https://github.com/Lukas-Beden">github.com/Lukas-Beden</a><br>
+            <a href="https://mishaloupe.itch.io">mishaloupe.itch.io</a>
+        </div>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="layout">
+
+        <!-- Left column -->
+        <div class="left-col">
+
+            <!-- Compétences -->
+            <div class="section">
+                <div class="section-title">Compétences</div>
+                <div class="skill-group">
+                    <div class="skill-label">Programmation</div>
+                    <div class="skill-tags">
+                        <span class="tag primary">C#</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-group" style="margin-top:2.5mm">
+                    <div class="skill-label">Moteurs</div>
+                    <div class="skill-tags">
+                        <span class="tag primary">Unity</span>
+                        <span class="tag">Unreal Engine</span>
+                    </div>
+                </div>
+                <div class="skill-group" style="margin-top:2.5mm">
+                    <div class="skill-label">Spécialités</div>
+                    <div class="skill-tags">
+                        <span class="tag accent2">Génération procédurale</span>
+                        <span class="tag accent2">Systèmes de gameplay</span>
+                        <span class="tag">Level design</span>
+                    </div>
+                </div>
+                <div class="skill-group" style="margin-top:2.5mm">
+                    <div class="skill-label">Outils</div>
+                    <div class="skill-tags">
+                        <span class="tag primary">Git / GitHub</span>
+                        <span class="tag">Miro</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formation -->
+            <div class="section">
+                <div class="section-title">Formation</div>
+                <div class="formation-item">
+                    <div class="formation-school">Gaming Campus — Lyon</div>
+                    <div class="formation-years">2023 — 2026</div>
+                    <div class="formation-degree">Bachelor Développeur Informatique<br>option Jeux Vidéo (en cours)</div>
+                </div>
+            </div>
+
+            <!-- Distinction -->
+            <div class="section">
+                <div class="section-title">Distinction</div>
+                <div class="badge">🏆 Game Jam VR — Vainqueur</div>
+                <div style="font-size:6.5pt; color:var(--muted); margin-top:2mm; line-height:1.6">
+                    Jeu de cartes en réalité virtuelle développé sur week-end
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="section">
+                <div class="section-title">Contact</div>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <div>
+                        <div class="contact-type">Email</div>
+                        <div class="contact-info"><a href="mailto:lukasbeden314@gmail.com">lukasbeden314@gmail.com</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <div>
+                        <div class="contact-type">Téléphone</div>
+                        <div class="contact-info">07 49 00 71 22</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💻</span>
+                    <div>
+                        <div class="contact-type">GitHub</div>
+                        <div class="contact-info"><a href="https://github.com/Lukas-Beden">github.com/Lukas-Beden</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💼</span>
+                    <div>
+                        <div class="contact-type">LinkedIn</div>
+                        <div class="contact-info"><a href="https://www.linkedin.com/in/lukas-beden-272413312/">Lukas Beden</a></div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🎮</span>
+                    <div>
+                        <div class="contact-type">Itch.io</div>
+                        <div class="contact-info"><a href="https://mishaloupe.itch.io">mishaloupe.itch.io</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right column — Projets -->
+        <div class="right-col">
+
+            <div class="section">
+                <div class="section-title">Projets développés</div>
+
+                <!-- Projet 1 -->
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-title">Génération Procédurale & Portails</div>
+                        <a class="github-link" href="https://github.com/Lukas-Beden/GenProc" target="_blank">GitHub ↗</a>
+                    </div>
+                    <div class="project-meta-row">
+                        <span class="meta-chip">Équipe de 2</span>
+                        <span class="meta-chip">Unity</span>
+                    </div>
+                    <p class="project-desc">
+                        Jeu d'exploration où les niveaux sont générés procéduralement. Le joueur récolte des pots de peinture pour dessiner un portail sur le sol et passer au niveau suivant. Biomes : plaines → désert → neige.
+                    </p>
+                    <div class="project-role"><strong>Mon rôle :</strong> Génération procédurale & système de portails</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Unity</span>
+                        <span class="project-tag">Procédural</span>
+                        <span class="project-tag">C#</span>
+                    </div>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-title">E3C — Switch World (Puzzle 2D/3D)</div>
+                        <a class="github-link" href="https://github.com/Lukas-Beden/E3C-Switch-World" target="_blank">GitHub ↗</a>
+                    </div>
+                    <div class="project-meta-row">
+                        <span class="meta-chip">Équipe de 4</span>
+                        <span class="meta-chip">Unity</span>
+                    </div>
+                    <p class="project-desc">
+                        Puzzle game avec bascule dynamique entre vue 2D et 3D. Le joueur résout des énigmes en changeant la perspective — les obstacles en 3D deviennent des passages en 2D et inversement.
+                    </p>
+                    <div class="project-role"><strong>Mon rôle :</strong> Système de switch 2D/3D, cohérence spatiale & physique</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Unity</span>
+                        <span class="project-tag">Puzzle</span>
+                        <span class="project-tag">C#</span>
+                        <span class="project-tag">Game Design</span>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-title">Room Defenders — Hero Shooter</div>
+                    </div>
+                    <div class="project-meta-row">
+                        <span class="meta-chip">Équipe de 6</span>
+                        <span class="meta-chip">Unity</span>
+                        <span class="meta-chip">Multijoueur</span>
+                    </div>
+                    <p class="project-desc">
+                        Hero shooter multijoueur en équipe. Personnages avec capacités uniques, combat nerveux et progression des compétences.
+                    </p>
+                    <div class="project-role"><strong>Mon rôle :</strong> Système de compétences des héros</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Unity</span>
+                        <span class="project-tag">Multijoueur</span>
+                        <span class="project-tag">C#</span>
+                        <span class="project-tag">Systèmes</span>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project">
+                    <div class="project-header">
+                        <div class="project-title">The Last Pulse — Game Concept</div>
+                    </div>
+                    <div class="project-meta-row">
+                        <span class="meta-chip">Concept solo</span>
+                        <span class="meta-chip">Roguelite</span>
+                    </div>
+                    <p class="project-desc">
+                        Conception complète d'un roguelite cyberpunk explorant la dialectique entre survie et perte d'humanité. Documentation détaillée des systèmes de gameplay.
+                    </p>
+                    <div class="project-role"><strong>Statut :</strong> Concept en attente de développement</div>
+                    <div class="project-tags">
+                        <span class="project-tag">Game Design</span>
+                        <span class="project-tag">Systèmes</span>
+                        <span class="project-tag">Documentation</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

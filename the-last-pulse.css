@@ -1,4 +1,4 @@
-/* ─── Variables ──────────────────────────────────────────── */
+/* ─── Variables — Thème sombre (défaut) ──────────────────── */
 :root {
     --bg: #0a0e14;
     --bg2: #0f151f;
@@ -9,6 +9,194 @@
     --text: #c5d1e0;
     --muted: rgba(197, 209, 224, 0.5);
     --grid: rgba(0, 217, 255, 0.08);
+    --nav-bg: rgba(10, 14, 20, 0.9);
+    --tracker-bg: rgba(20, 27, 38, 0.95);
+    --scanline-color: rgba(0, 217, 255, 0.03);
+    --theme: dark;
+}
+
+/* ─── Variables — Thème clair ────────────────────────────── */
+html.light {
+    --bg: #edf2f7;
+    --bg2: #dfe7f0;
+    --surface: #cfd9e6;
+    --red: #b8243e;
+    --cyan: #006f8a;
+    --yellow: #916e00;
+    --text: #08111a;
+    --muted: #2e4050;
+    --grid: rgba(0, 111, 138, 0.07);
+    --nav-bg: rgba(237, 242, 247, 0.96);
+    --tracker-bg: rgba(207, 217, 230, 0.97);
+    --scanline-color: rgba(0, 111, 138, 0.02);
+    --theme: light;
+}
+
+/* ─── Bouton thème ───────────────────────────────────────── */
+.theme-toggle {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 200;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--cyan);
+    background: var(--surface);
+    color: var(--cyan);
+    border-radius: 50%;
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: background 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 0 12px rgba(0, 217, 255, 0.2);
+    pointer-events: auto;
+}
+
+.theme-toggle:hover {
+    background: var(--cyan);
+    color: var(--bg);
+    transform: scale(1.1);
+    box-shadow: 0 0 24px rgba(0, 217, 255, 0.4);
+}
+
+/* Light theme — adaptations spécifiques */
+html.light body::before {
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--scanline-color) 2px, var(--scanline-color) 4px);
+    opacity: 0.5;
+}
+
+html.light .nav {
+    background: var(--nav-bg);
+    border-bottom-color: rgba(0, 111, 138, 0.2);
+}
+
+html.light .cyber-tracker {
+    background: var(--tracker-bg);
+    border-color: var(--cyan);
+    box-shadow: 0 0 16px rgba(0, 111, 138, 0.18);
+}
+
+html.light .tracker-bar {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+html.light .hero-title {
+    background: linear-gradient(135deg, var(--cyan), var(--red));
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+html.light .warning-box {
+    background: rgba(184, 36, 62, 0.06);
+    border-color: var(--red);
+    color: var(--red);
+}
+
+html.light .loop-step {
+    background: rgba(0, 111, 138, 0.05);
+    border-color: rgba(0, 111, 138, 0.22);
+}
+
+html.light .loop-step:hover {
+    background: rgba(0, 111, 138, 0.12);
+    border-color: var(--cyan);
+}
+
+html.light .implant-table th {
+    background: rgba(0, 111, 138, 0.1);
+    border-color: rgba(0, 111, 138, 0.22);
+    color: var(--text);
+}
+
+html.light .implant-table td {
+    border-color: rgba(0, 111, 138, 0.14);
+    color: var(--muted);
+}
+
+html.light .implant-table tr:hover td {
+    background: rgba(0, 111, 138, 0.07);
+}
+
+html.light .building-card {
+    background: rgba(0, 111, 138, 0.05);
+    border-color: rgba(0, 111, 138, 0.22);
+}
+
+html.light .building-card:hover {
+    background: rgba(0, 111, 138, 0.12);
+    border-color: var(--cyan);
+}
+
+html.light .ending {
+    border-color: rgba(0, 111, 138, 0.2);
+}
+
+html.light .ending.success {
+    background: rgba(0, 120, 80, 0.07);
+    border-color: rgba(0, 120, 80, 0.32);
+}
+
+html.light .ending.warning {
+    background: rgba(145, 110, 0, 0.07);
+    border-color: rgba(145, 110, 0, 0.32);
+}
+
+html.light .ending.failure {
+    background: rgba(184, 36, 62, 0.07);
+    border-color: rgba(184, 36, 62, 0.32);
+}
+
+html.light .ending-label {
+    color: var(--muted);
+}
+
+html.light .prog-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+html.light .prog-desc {
+    color: var(--muted);
+}
+
+html.light .section-header .section-num {
+    border-color: rgba(0, 111, 138, 0.25);
+    color: var(--cyan);
+}
+
+html.light .btn-back {
+    border-color: rgba(0, 111, 138, 0.35);
+    color: var(--cyan);
+}
+
+html.light .btn-back:hover {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+html.light footer {
+    border-top-color: rgba(0, 111, 138, 0.15);
+    background: var(--bg2);
+}
+
+html.light .footer-note {
+    color: var(--muted);
+}
+
+html.light .touch-ripple::before {
+    color: var(--cyan);
+}
+
+html.light .touch-ripple::after {
+    border-color: var(--cyan);
+}
+
+
+@media (pointer: coarse) {
+    .theme-toggle {
+        cursor: auto;
+    }
 }
 
 /* ─── Reset ──────────────────────────────────────────────── */
@@ -136,7 +324,7 @@ body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background: repeating-linear-gradient( 0deg, transparent, transparent 2px, rgba(0, 217, 255, 0.03) 2px, rgba(0, 217, 255, 0.03) 4px );
+    background: repeating-linear-gradient( 0deg, transparent, transparent 2px, var(--scanline-color) 2px, var(--scanline-color) 4px );
     pointer-events: none;
     z-index: 9999;
     animation: scanlines 8s linear infinite;
@@ -171,7 +359,7 @@ body::after {
     right: 20px;
     width: 240px;
     padding: 16px;
-    background: rgba(20, 27, 38, 0.95);
+    background: var(--tracker-bg);
     border: 1px solid var(--cyan);
     box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
     z-index: 100;
@@ -232,7 +420,7 @@ body::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(10, 14, 20, 0.9);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 217, 255, 0.2);
     z-index: 99;

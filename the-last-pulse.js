@@ -1,3 +1,31 @@
+// ─── Thème clair / sombre ────────────────────────────────────
+(function initTheme() {
+    const saved = localStorage.getItem('portfolio-theme') || 'dark';
+    if (saved === 'light') {
+        document.documentElement.classList.add('light');
+    }
+    updateThemeUI(saved);
+})();
+
+function updateThemeUI(theme) {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    btn.textContent = theme === 'dark' ? '☀' : '☾';
+    btn.title = theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const isLight = document.documentElement.classList.toggle('light');
+            const theme = isLight ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', theme);
+            updateThemeUI(theme);
+        });
+    }
+});
+
 // ─── Détection tactile ──────────────────────────────────────
 const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 

@@ -1,5 +1,66 @@
-﻿/* ── Détection tactile ───────────────────────────────────── */
+/* ── Détection tactile ───────────────────────────────────── */
 const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+/* ── Thème clair / sombre ────────────────────────────────── */
+(function initTheme() {
+    const saved = localStorage.getItem('portfolio-theme') || 'dark';
+    if (saved === 'light') {
+        document.documentElement.classList.add('light');
+    }
+    updateThemeUI(saved);
+    updateDownloadLinks(saved);
+})();
+
+function updateThemeUI(theme) {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    btn.textContent = theme === 'dark' ? '☀' : '☾';
+    btn.title = theme === 'dark' ? 'Passer en mode clair' : 'Passer en mode sombre';
+}
+
+function updateDownloadLinks(theme) {
+    const cvBtn = document.getElementById('cv-download-btn');
+    const lettreBtn = document.getElementById('lettre-download-btn');
+    if (cvBtn) {
+        if (theme === 'light') {
+            cvBtn.href = 'CV_Lukas_Beden_light.html';
+        } else {
+            cvBtn.href = 'CV_Lukas_Beden_dark.html';
+        }
+        cvBtn.removeAttribute('download');
+        cvBtn.target = '_blank';
+    }
+    if (lettreBtn) {
+        if (theme === 'light') {
+            lettreBtn.href = 'Lettre-motivation-Lukas-Beden-light.html';
+        } else {
+            lettreBtn.href = 'Lettre-motivation-Lukas-Beden.html';
+        }
+        lettreBtn.removeAttribute('download');
+        lettreBtn.target = '_blank';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('themeToggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            const isLight = document.documentElement.classList.toggle('light');
+            const theme = isLight ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', theme);
+            updateThemeUI(theme);
+            updateDownloadLinks(theme);
+            // Mettre à jour la couleur des étoiles canvas
+            updateStarColors(theme);
+        });
+    }
+});
+
+function updateStarColors(theme) {
+    // Les étoiles utilisent maintenant les variables CSS via les fonctions draw
+    // On force un re-render en changeant les couleurs globales
+    window._portfolioTheme = theme;
+}
 
 /* ── Cursor (desktop uniquement) ────────────────────────── */
 if (!isTouchDevice) {
@@ -79,9 +140,11 @@ class Star {
     }
 
     draw() {
+        const isLight = document.documentElement.classList.contains('light');
+        const starColor = isLight ? `rgba(42, 100, 80, ${this.alpha})` : `rgba(200, 220, 240, ${this.alpha})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(200, 220, 240, ${this.alpha})`;
+        ctx.fillStyle = starColor;
         ctx.fill();
     }
 }
@@ -115,11 +178,13 @@ function drawConstellations() {
 
                 const proximity = 1 - mouseDist / maxMouseDist;
                 const alpha = (1 - dist / CONNECT_DIST) * 0.25 * proximity;
+                const isLight = document.documentElement.classList.contains('light');
+                const lineColor = isLight ? `rgba(42, 157, 140, ${alpha})` : `rgba(94, 205, 190, ${alpha})`;
 
                 ctx.beginPath();
                 ctx.moveTo(stars[i].x, stars[i].y);
                 ctx.lineTo(stars[j].x, stars[j].y);
-                ctx.strokeStyle = `rgba(94, 205, 190, ${alpha})`;
+                ctx.strokeStyle = lineColor;
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
             }
