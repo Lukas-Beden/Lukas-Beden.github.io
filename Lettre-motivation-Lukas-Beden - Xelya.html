@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettre de Motivation — Lukas Beden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #04090f;
+            --bg2: #070e18;
+            --surface: #0b1623;
+            --border: rgba(94, 205, 190, 0.15);
+            --accent: #5ecdbf;
+            --accent2: #e8a24a;
+            --text: #c8d8e8;
+            --muted: rgba(200, 216, 232, 0.55);
+            --glow: rgba(94, 205, 190, 0.18);
+            --red: #e05c5c;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 10mm 16mm 10mm 16mm;
+            position: relative;
+            overflow: hidden;
+        }
+
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+            }
+
+        /* ── Header ─── */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 7mm;
+            padding-bottom: 5mm;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .name {
+            font-family: 'Cinzel', serif;
+            font-size: 22pt;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--text);
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 7.5pt;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 7.5pt;
+            color: var(--muted);
+            line-height: 2;
+            letter-spacing: 0.05em;
+        }
+
+            .header-right a {
+                color: var(--accent);
+                text-decoration: none;
+            }
+
+        /* ── Meta band ─── */
+        .meta-band {
+            display: flex;
+            gap: 6mm;
+            margin-bottom: 7mm;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .meta-label {
+            font-size: 6pt;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .meta-value {
+            font-size: 8pt;
+            color: var(--text);
+        }
+
+        /* ── Recipient block ─── */
+        .recipient-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6mm;
+        }
+
+        .recipient {
+            font-size: 8.5pt;
+            line-height: 2;
+            color: var(--muted);
+        }
+
+        .date-block {
+            text-align: right;
+            font-size: 7.5pt;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Objet ─── */
+        .objet {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6mm;
+            padding: 4mm 5mm;
+            border: 1px solid var(--border);
+            background: rgba(94, 205, 190, 0.03);
+        }
+
+            .objet::before {
+                content: '';
+                display: block;
+                width: 3px;
+                height: 100%;
+                background: var(--accent);
+                flex-shrink: 0;
+                align-self: stretch;
+            }
+
+        .objet-label {
+            font-size: 6.5pt;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-right: 4px;
+        }
+
+        .objet-text {
+            font-size: 8pt;
+            color: var(--text);
+        }
+
+        /* ── Salutation ─── */
+        .salutation {
+            font-size: 8.5pt;
+            color: var(--muted);
+            margin-bottom: 5mm;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Body ─── */
+        .body-text {
+            font-size: 8.5pt;
+            line-height: 1.85;
+            color: var(--muted);
+            margin-bottom: 4mm;
+            text-align: justify;
+        }
+
+            .body-text .highlight {
+                color: var(--accent2);
+                font-weight: 700;
+            }
+
+            .body-text .accent {
+                color: var(--accent);
+            }
+
+        /* ── Closing ─── */
+        .closing {
+            font-size: 8pt;
+            color: var(--muted);
+            margin-top: 5mm;
+            margin-bottom: 5mm;
+            line-height: 2;
+        }
+
+        .signature-block {
+            margin-top: 6mm;
+        }
+
+        .sig-name {
+            font-family: 'Cinzel', serif;
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 0.04em;
+            margin-bottom: 2mm;
+        }
+
+        .sig-links {
+            font-size: 7pt;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            line-height: 2;
+        }
+
+        /* Decorative glyph */
+        .corner-glyph {
+            position: absolute;
+            top: 18mm;
+            right: 16mm;
+            font-family: 'Cinzel', serif;
+            font-size: 80pt;
+            color: var(--accent);
+            opacity: 0.03;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* Divider */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: var(--border);
+            margin: 6mm 0;
+        }
+
+        /* ── Print ─── */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                margin: 0;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="corner-glyph">◈</div>
+
+    <!-- ── Header ── -->
+    <div class="header">
+        <div class="header-left">
+            <div class="name">Lukas Beden</div>
+            <div class="title">Développeur C# · Systèmes &amp; Applications</div>
+        </div>
+        <div class="header-right">
+            07 49 00 71 22<br>
+            <a href="mailto:lukasbeden314@gmail.com">lukasbeden314@gmail.com</a><br>
+            Lyon, France<br>
+            <a href="https://github.com/Lukas-Beden">github.com/Lukas-Beden</a>
+        </div>
+    </div>
+
+    <!-- ── Meta band ── -->
+    <div class="meta-band">
+        <div class="meta-item">
+            <span class="meta-label">Poste visé</span>
+            <span class="meta-value">Développeur Fullstack Mobile C# / TypeScript</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Type</span>
+            <span class="meta-value">CDI</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Disponibilité</span>
+            <span class="meta-value">11/05/2026</span>
+        </div>
+    </div>
+
+    <!-- ── Recipient + Date ── -->
+    <div class="recipient-row">
+        <div class="recipient">
+            Xelya
+        </div>
+        <div class="date-block">
+            Lyon, le 04/05/2026
+        </div>
+    </div>
+
+    <!-- ── Objet ── -->
+    <div class="objet">
+        <span class="objet-label">Objet</span>
+        <span class="objet-text">
+            Candidature — Développeur Fullstack Mobile C# / TypeScript — CDI
+        </span>
+    </div>
+
+    <!-- ── Salutation ── -->
+    <div class="salutation">Madame, Monsieur,</div>
+
+    <!-- ── Body ── -->
+    <p class="body-text">
+        Étudiant en troisième année de <span class="highlight">Bachelor Développeur Informatique option Jeu Vidéo</span>
+        au Gaming Campus de Lyon, je suis à la recherche d'un CDI en développement d'applications à partir du
+        11 mai 2026. Xelya retient particulièrement mon attention : votre stack technique — <span class="accent">.NET / C#</span>
+        côté serveur et <span class="accent">TypeScript</span> pour les applications mobiles — correspond directement aux
+        technologies que je maîtrise ou que je souhaite apprendre. Au-delà des langages, c'est la nature de vos
+        produits qui me motive : concevoir des outils qui facilitent concrètement le quotidien de professionnels,
+        notamment du secteur médical, est un objectif qui donne du sens au code que l'on écrit.
+    </p>
+
+    <p class="body-text">
+        Mes trois années de formation m'ont permis de construire une pratique solide du <span class="accent">C#</span>
+        à travers une dizaine de projets par an. J'ai notamment conçu un système de
+        <span class="highlight">génération procédurale de niveaux complets</span> en C# pur (gestion algorithmique
+        des salles, couloirs et biomes), implémenté la <span class="highlight">synchronisation réseau</span> d'un jeu
+        multijoueur (<em>Room Defenders</em> — système de compétences modulaire et cohérence d'état entre clients),
+        et développé un prototype de <span class="highlight">basculement dynamique 2D / 3D</span> maintenant la
+        cohérence spatiale et physique en temps réel. Ces projets m'ont appris à structurer du code maintenable
+        sous contrainte de temps, en équipe et via Git.
+    </p>
+
+    <p class="body-text">
+        Mon parcours est ancré dans le jeu vidéo, non pas par manque de polyvalence, mais parce que c'est l'un des
+        domaines les plus exigeants en architecture logicielle et en gestion de systèmes complexes. Les compétences
+        développées — rigueur algorithmique, découpage en modules indépendants, travail collaboratif sur des bases
+        de code partagées — sont directement transférables au développement d'applications métier. Le TypeScript et
+        le développement mobile représentent pour moi un nouveau territoire à comprendre en profondeur : j'aborde
+        chaque nouveau langage comme un nouveau système de règles, avec méthode et curiosité.
+    </p>
+
+    <p class="body-text">
+        Vous trouverez l'ensemble de mes projets sur mon GitHub ci-dessous.
+        Je reste disponible pour un entretien à votre convenance.
+    </p>
+
+    <!-- ── Closing ── -->
+    <div class="closing">
+        Dans l'attente de vous lire, veuillez agréer, Madame, Monsieur,<br>
+        l'expression de mes salutations distinguées.
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ── Signature ── -->
+    <div class="signature-block">
+        <div class="sig-name">Lukas Beden</div>
+        <div class="sig-links">
+            github.com/Lukas-Beden<br>
+            lukasbeden314@gmail.com &nbsp;·&nbsp; 07 49 00 71 22
+        </div>
+    </div>
+
+</body>
+</html>

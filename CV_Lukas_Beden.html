@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV — Lukas Beden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #04090f;
+            --border: rgba(94, 205, 190, 0.15);
+            --accent: #5ecdbf;
+            --accent2: #e8a24a;
+            --text: #c8d8e8;
+            --muted: rgba(200, 216, 232, 0.55);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 7mm 14mm 7mm 14mm;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+        }
+
+        .corner-glyph {
+            position: absolute;
+            top: 14mm; right: 14mm;
+            font-family: 'Cinzel', serif;
+            font-size: 70pt;
+            color: var(--accent);
+            opacity: 0.03;
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* ── Header ── */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4mm;
+            padding-bottom: 3mm;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .name {
+            font-family: 'Cinzel', serif;
+            font-size: 18pt;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            color: var(--text);
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 6.5pt;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-top: 3px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 7pt;
+            color: var(--muted);
+            line-height: 1.65;
+            letter-spacing: 0.04em;
+        }
+
+        .header-right a { color: var(--accent); text-decoration: none; }
+
+        /* ── Meta band ── */
+        .meta-band {
+            display: flex;
+            gap: 5mm;
+            margin-bottom: 4mm;
+            padding: 2mm 3mm;
+            border: 1px solid var(--border);
+            background: rgba(94, 205, 190, 0.03);
+        }
+
+        .meta-item { display: flex; flex-direction: column; gap: 1px; }
+
+        .meta-label {
+            font-size: 5.5pt;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .meta-value { font-size: 7.5pt; color: var(--text); }
+        .meta-value .hl { color: var(--accent2); }
+
+        /* ── Main grid ── */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 54mm 1fr;
+            gap: 5mm;
+        }
+
+        /* ── Section titles ── */
+        .section-title {
+            font-size: 5.5pt;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 2mm;
+            padding-bottom: 1.5mm;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .section-title::before {
+            content: '▸';
+            color: var(--accent2);
+            font-size: 6pt;
+        }
+
+        /* ── Sidebar ── */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5mm;
+            border-right: 1px solid var(--border);
+            padding-right: 4mm;
+        }
+
+        .skill-list { display: flex; flex-direction: column; gap: 1.2mm; }
+
+        .skill-item {
+            font-size: 7pt;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .skill-item::before {
+            content: '';
+            display: inline-block;
+            width: 3px; height: 3px;
+            background: var(--accent);
+            flex-shrink: 0;
+            transform: rotate(45deg);
+        }
+
+        .skill-item .skill-main { color: var(--text); font-weight: 700; }
+
+        .lang-item {
+            font-size: 7pt;
+            color: var(--muted);
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lang-item::before {
+            content: '';
+            display: inline-block;
+            width: 3px; height: 3px;
+            background: var(--accent2);
+            flex-shrink: 0;
+            transform: rotate(45deg);
+        }
+
+        .lang-item .lang-name { color: var(--text); font-weight: 700; }
+        .lang-level { color: var(--accent); }
+
+        .interest-item {
+            font-size: 7pt;
+            color: var(--muted);
+            margin-bottom: 1.5mm;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .interest-item::before {
+            content: '';
+            display: inline-block;
+            width: 3px; height: 3px;
+            background: rgba(94, 205, 190, 0.4);
+            flex-shrink: 0;
+            transform: rotate(45deg);
+        }
+
+        /* ── Main column ── */
+        .main-col { display: flex; flex-direction: column; gap: 3.5mm; }
+
+        .profile-text {
+            font-size: 7.5pt;
+            line-height: 1.75;
+            color: var(--muted);
+            text-align: justify;
+        }
+
+        .profile-text .accent { color: var(--accent); }
+        .profile-text .hl { color: var(--accent2); font-weight: 700; }
+
+        /* ── Cards (projets & expériences) ── */
+        .card {
+            padding: 2mm 3mm;
+            border: 1px solid var(--border);
+            background: rgba(94, 205, 190, 0.02);
+            margin-bottom: 1.8mm;
+            position: relative;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 2px;
+        }
+
+        .card.teal::before { background: var(--accent); }
+        .card.amber::before { background: var(--accent2); }
+        .card.dim::before { background: rgba(94, 205, 190, 0.5); }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.8mm;
+        }
+
+        .card-title { font-size: 8pt; font-weight: 700; color: var(--text); letter-spacing: 0.04em; }
+
+        .card-meta { font-size: 6pt; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; text-align: right; }
+        .card-meta.amber-c { color: var(--accent2); }
+        .card-meta.teal-c { color: var(--accent); }
+
+        .card-sub { font-size: 6.5pt; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 0.8mm; }
+
+        .tags { display: flex; gap: 1.5mm; flex-wrap: wrap; margin-bottom: 1mm; }
+
+        .tag {
+            font-size: 5.5pt;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding: 1px 3px;
+            border: 1px solid rgba(94, 205, 190, 0.25);
+        }
+
+        .tag.am { color: var(--accent2); border-color: rgba(232, 162, 74, 0.25); }
+
+        .card-desc { font-size: 7pt; color: var(--muted); line-height: 1.55; }
+
+        /* Divider */
+        .divider { width: 100%; height: 1px; background: var(--border); margin: 2mm 0; }
+
+        /* Footer */
+        .footer {
+            margin-top: 3mm;
+            padding-top: 2.5mm;
+            border-top: 1px solid var(--border);
+            font-size: 6pt;
+            color: var(--muted);
+            letter-spacing: 0.08em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer a { color: var(--accent); text-decoration: none; }
+
+        @media print {
+            @page { size: A4; margin: 0; }
+            body {
+                margin: 0;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="corner-glyph">◈</div>
+
+    <div class="header">
+        <div>
+            <div class="name">Lukas Beden</div>
+            <div class="title">Game Systems Designer · Développeur Gameplay · Unity / C#</div>
+        </div>
+        <div class="header-right">
+            07 49 00 71 22<br>
+            <a href="mailto:lukasbeden314@gmail.com">lukasbeden314@gmail.com</a><br>
+            Lyon, France<br>
+            <a href="https://github.com/Lukas-Beden">github.com/Lukas-Beden</a><br>
+            <a href="https://mishaloupe.itch.io">mishaloupe.itch.io</a>
+        </div>
+    </div>
+
+    <div class="meta-band">
+        <div class="meta-item">
+            <span class="meta-label">Statut</span>
+            <span class="meta-value"><span class="hl">Recherche de travail sur Lyon</span></span>
+        </div>
+        <div style="flex:1"></div>
+        <div class="meta-item">
+            <span class="meta-label">Spécialité</span>
+            <span class="meta-value">Gameplay · Génération Procédurale</span>
+        </div>
+        <div style="flex:1"></div>
+        <div class="meta-item" style="text-align:right;">
+            <span class="meta-label">Localisation</span>
+            <span class="meta-value">Lyon, France</span>
+        </div>
+    </div>
+
+    <div class="main-grid">
+
+        <!-- ══ Sidebar ══ -->
+        <div class="sidebar">
+
+            <div>
+                <div class="section-title">Compétences</div>
+                <div class="skill-list">
+                    <div class="skill-item"><span class="skill-main">C#</span> / C++ / Blueprint</div>
+                    <div class="skill-item"><span class="skill-main">Génération Procédurale</span></div>
+                    <div class="skill-item"><span class="skill-main">Unity</span> / Unreal</div>
+                    <div class="skill-item"><span class="skill-main">Game Design</span></div>
+                    <div class="skill-item"><span class="skill-main">Python</span></div>
+                    <div class="skill-item"><span class="skill-main">Git</span> / GitHub</div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+                <div class="section-title">Formation</div>
+
+                <div class="card dim">
+                    <div class="card-header">
+                        <div class="card-title">Bachelor Dev. Informatique</div>
+                        <div class="card-meta teal-c">Depuis 2023</div>
+                    </div>
+                    <div class="card-sub">Option Jeu Vidéo · École (3 ans)</div>
+                    <div class="card-desc">Spécialisation développement gameplay. ~13 projets / an.</div>
+                </div>
+
+                <div class="card dim">
+                    <div class="card-header">
+                        <div class="card-title">Baccalauréat</div>
+                        <div class="card-meta teal-c">2023</div>
+                    </div>
+                    <div class="card-sub">Lycée La Malgrange</div>
+                    <div class="card-desc">Mathématiques · NSI — <span style="color:var(--accent2);font-weight:700;">Mention Bien</span></div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+                <div class="section-title">Langues</div>
+                <div class="lang-item"><span class="lang-name">Français</span>&nbsp;<span class="lang-level">— Natif</span></div>
+                <div class="lang-item"><span class="lang-name">Anglais</span>&nbsp;<span class="lang-level">— B1 · Autonome</span></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+                <div class="section-title">Intérêts</div>
+                <div class="interest-item">Création de jeux vidéo</div>
+                <div class="interest-item">Échecs &amp; réflexion</div>
+                <div class="interest-item">Lecture (fantasy / manga)</div>
+            </div>
+
+        </div>
+
+        <!-- ══ Main column ══ -->
+        <div class="main-col">
+
+            <div>
+                <div class="section-title">Profil</div>
+                <p class="profile-text">
+                    Passionné de <span class="hl">game design</span> et de <span class="accent">génération procédurale</span>,
+                    je conçois des systèmes originaux centrés sur la <span class="hl">découverte et l'émerveillement</span>.
+                    Inspiré par Outer Wilds, Tunic et Chant of Sennaar, je cherche à créer des mécaniques
+                    dont la logique interne surprend et engage le joueur au-delà de l'évident.
+                </p>
+            </div>
+
+            <div>
+                <div class="section-title">Projets</div>
+
+                <div class="card teal">
+                    <div class="card-header">
+                        <div class="card-title">Génération Procédurale &amp; Portails</div>
+                        <div class="card-meta">Développeur gameplay · Équipe de 2</div>
+                    </div>
+                    <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Procédural</span><span class="tag am">GitHub</span></div>
+                    <div class="card-desc">Génération algorithmique de maps et système de portails dessinés par le joueur. Level design émergent.</div>
+                </div>
+
+                <div class="card teal">
+                    <div class="card-header">
+                        <div class="card-title">Switch 2D / 3D</div>
+                        <div class="card-meta">Développeur · Équipe de 2</div>
+                    </div>
+                    <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Prototype</span><span class="tag am">GitHub</span></div>
+                    <div class="card-desc">Basculement dynamique entre vue 2D et 3D. Cohérence spatiale, physique et contrôles en temps réel.</div>
+                </div>
+
+                <div class="card teal">
+                    <div class="card-header">
+                        <div class="card-title">Room Defenders</div>
+                        <div class="card-meta">Développeur gameplay</div>
+                    </div>
+                    <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Multijoueur</span><span class="tag am">GitHub</span></div>
+                    <div class="card-desc">Hero defense multijoueur. Système de compétences modulaire et synchronisation réseau.</div>
+                </div>
+
+                <div class="card teal">
+                    <div class="card-header">
+                        <div class="card-title">The Last Pulse — Game Concept</div>
+                        <div class="card-meta">Conception solo</div>
+                    </div>
+                    <div class="tags"><span class="tag">Game Design</span><span class="tag am">Roguelite</span><span class="tag">Systèmes</span></div>
+                    <div class="card-desc">Roguelite cyberpunk : dialectique humanité / cybernétisation, base building, système social à conséquences permanentes.</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">Expériences</div>
+
+                <div class="card amber">
+                    <div class="card-header">
+                        <div class="card-title">Suppléant au quai</div>
+                        <div class="card-meta amber-c">Juil – Août 2024</div>
+                    </div>
+                    <div class="card-sub">Végafruits — Coopérative agricole · St Nicolas De Port (54)</div>
+                    <div class="card-desc">Engins de manutention · Gestion multitâche sous pression</div>
+                </div>
+
+                <div class="card amber">
+                    <div class="card-header">
+                        <div class="card-title">Serveur et plongeur</div>
+                        <div class="card-meta amber-c">Nov – Déc 2023</div>
+                    </div>
+                    <div class="card-sub">Crep'eat — Restaurant · Lyon 8e (69)</div>
+                    <div class="card-desc">Travail d'équipe et relation client</div>
+                </div>
+
+                <div class="card amber">
+                    <div class="card-header">
+                        <div class="card-title">Opérateur de production</div>
+                        <div class="card-meta amber-c">Juil – Août 2023</div>
+                    </div>
+                    <div class="card-sub">Végafruits — Coopérative agricole · St Nicolas De Port (54)</div>
+                    <div class="card-desc">Efficacité et rigueur en environnement industriel</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>lukasbeden314@gmail.com · 07 49 00 71 22</span>
+        <span><a href="https://github.com/Lukas-Beden">github.com/Lukas-Beden</a> · <a href="https://mishaloupe.itch.io">mishaloupe.itch.io</a> · <a href="https://linkedin.com/in/lukas-beden">linkedin.com/in/lukas-beden</a></span>
+    </div>
+
+</body>
+</html>
